@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <!-- Deep Pasture Emerald Gradient -->
+    <linearGradient id="bvBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b2c17"/>
+      <stop offset="50%" stop-color="#144b27"/>
+      <stop offset="100%" stop-color="#1f6938"/>
+    </linearGradient>
+
+    <!-- Warm Golden Corn / Harvest Amber -->
+    <linearGradient id="bvGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="35%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Metallic Gold & Mint Bezel -->
+    <linearGradient id="bvBezel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95"/>
+      <stop offset="45%" stop-color="#f59e0b" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <filter id="bvShadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base with Metallic Bezel -->
+  <rect x="4" y="4" width="92" height="92" rx="26" fill="url(#bvBgGrad)" stroke="url(#bvBezel)" stroke-width="3"/>
+  <!-- Top Glass Sheen -->
+  <path d="M 6 28 C 6 15 15 6 28 6 L 72 6 C 85 6 94 15 94 28 C 64 36 36 36 6 28 Z" fill="#ffffff" opacity="0.12"/>
+  <!-- Subtle ambient amber glow -->
+  <circle cx="80" cy="20" r="14" fill="url(#bvGold)" opacity="0.25"/>
+
+  <g filter="url(#bvShadow)">
+    <!-- Golden Wheat Stalk (Left Side Arch) -->
+    <g fill="url(#bvGold)">
+      <!-- Main Stem -->
+      <path d="M 22 82 C 14 62 16 38 28 18" stroke="url(#bvGold)" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+      <!-- Wheat Grains along the stem -->
+      <path d="M 28 18 C 26 13 22 13 20 17 C 22 20 26 20 28 18 Z"/>
+      <path d="M 23 26 C 20 22 15 23 15 27 C 18 29 22 28 23 26 Z"/>
+      <path d="M 21 35 C 17 31 12 33 13 37 C 16 39 20 37 21 35 Z"/>
+      <path d="M 19 44 C 14 41 11 44 12 48 C 15 49 19 47 19 44 Z"/>
+      <path d="M 19 53 C 14 51 12 55 14 59 C 17 59 19 56 19 53 Z"/>
+      
+      <!-- Right Side Grains -->
+      <path d="M 29 24 C 33 21 36 24 35 28 C 32 29 29 27 29 24 Z"/>
+      <path d="M 26 33 C 30 30 33 33 33 36 C 29 38 27 36 26 33 Z"/>
+      <path d="M 25 42 C 29 39 32 42 32 45 C 28 47 26 44 25 42 Z"/>
+    </g>
+
+    <!-- Majestic Dairy Bull / Cow Head Profile (Right-Facing) -->
+    <!-- Background Horn (Golden) -->
+    <path d="M 46 36 C 44 26 52 18 64 19 C 58 24 51 30 48 37 Z" fill="url(#bvGold)" opacity="0.85"/>
+    
+    <!-- Foreground Horn (Sweeping boldly upward in Gold) -->
+    <path d="M 54 34 C 52 18 66 8 82 11 C 74 17 65 25 60 35 Z" fill="url(#bvGold)"/>
+
+    <!-- Ear (Elegantly pointing back) -->
+    <path d="M 48 42 C 38 41 34 46 38 50 C 44 49 48 46 48 42 Z" fill="#ffffff" opacity="0.9"/>
+
+    <!-- Head & Muzzle Silhouette (True bovine profile: flat forehead, strong nose bridge, blunt muzzle) -->
+    <path d="M 52 35 C 58 35 64 38 70 44 L 84 57 C 86 59 86 63 84 65 L 78 69 C 74 70 70 69 67 66 L 63 62 C 59 66 54 72 45 74 C 42 68 42 60 45 54 C 45 50 48 45 50 40 Z" fill="#ffffff"/>
+
+    <!-- Eye (Almond bovine eye slit in deep green) -->
+    <ellipse cx="61" cy="45" rx="2" ry="1.4" transform="rotate(-15, 61, 45)" fill="#0b2c17"/>
+
+    <!-- Veterinary Shield Cross Emblem (Bottom-Right Badge) -->
+    <g transform="translate(70, 72)">
+      <!-- Golden Shield Rim -->
+      <path d="M 0 -8 L 8 -4 L 8 4 C 8 8 0 11 0 11 C 0 11 -8 8 -8 4 L -8 -4 Z" fill="url(#bvGold)"/>
+      <!-- Inner Green Core -->
+      <path d="M 0 -6.5 L 6.5 -3.2 L 6.5 3.2 C 6.5 6.5 0 9.2 0 9.2 C 0 9.2 -6.5 6.5 -6.5 3.2 L -6.5 -3.2 Z" fill="#0b2c17"/>
+      <!-- Crisp White Cross -->
+      <path d="M -1.2 -3.6 L 1.2 -3.6 L 1.2 -1.2 L 3.6 -1.2 L 3.6 1.2 L 1.2 1.2 L 1.2 3.6 L -1.2 3.6 L -1.2 1.2 L -3.6 1.2 L -3.6 -1.2 L -1.2 -1.2 Z" fill="#ffffff"/>
+    </g>
+  </g>
+</svg>

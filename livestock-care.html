@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprehensive cattle nutrition guides, seasonal feeding schedules, calf rearing protocols, and dairy herd veterinary health advice.">
+  <title>Livestock Care &amp; Nutrition Guide | BoviCure &amp; Feeds™</title>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- Favicon & Mobile App Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <meta property="og:image" content="assets/images/og-preview.jpg">
+  <meta name="twitter:image" content="assets/images/og-preview.jpg">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header header-transparent" data-transparent="true">
+    <!-- Main Navigation Bar -->
+    <nav class="navbar-main">
+      <div class="container navbar-container">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon-box">
+            <img src="assets/images/logo-icon.svg" alt="BoviCure &amp; Feeds™ Logo" width="44" height="44">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">BoviCure<span style="color: var(--secondary);">&amp;</span>Feeds</span>
+            <span class="brand-tagline">Livestock &amp; Veterinary</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home <i class="fa-solid fa-angle-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="index.html" class="dropdown-link">Home 1 – Agricultural Landing</a>
+              <a href="index-2.html" class="dropdown-link">Home 2 – Livestock &amp; Vet Niche</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link">Products</a></li>
+          <li class="nav-item"><a href="livestock-care.html" class="nav-link active">Livestock Care</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-toggle-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="action-btn cart-toggle-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count-badge">2</span></button>
+          <button class="action-btn theme-toggle-btn" title="Light Mode Active (Click for Dark Mode)">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="action-btn rtl-toggle-btn" title="Toggle RTL/LTR layout" aria-label="Toggle RTL/LTR layout"><i class="fa-solid fa-right-left"></i></button>
+          <a href="contact.html" class="btn btn-secondary btn-sm d-none d-lg-inline-flex"><i class="fa-solid fa-phone-volume"></i> Consult Vet</a>
+          <button class="action-btn hamburger-btn"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Hero Banner -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Livestock Care</span>
+      </div>
+      <h1 style="color: #ffffff; margin-bottom: 0.85rem;">Bovine Nutrition, Herd Protocols &amp; Veterinary Guides</h1>
+      <p style="color: rgba(255, 255, 255, 0.88); font-size: 1.15rem; max-width: 680px; margin: 0 auto;">Practical management protocols authored by bovine veterinary specialists to safeguard herd longevity, reproductive vigor, and calf survival.</p>
+    </div>
+  </section>
+
+  <!-- Seasonal Livestock Care Matrix -->
+  <section class="section-padding" style="background-color: var(--bg-surface);">
+    <div class="container">
+      <div class="section-header text-center reveal-up">
+        <span class="section-badge"><i class="fa-solid fa-cloud-sun"></i> Year-Round Management</span>
+        <h2 class="section-title">Seasonal Cattle Nutrition &amp; Herd Protection</h2>
+        <p class="section-desc">Each season presents distinct physiological challenges for ruminants. Follow our seasonal feeding and prevention guidelines.</p>
+      </div>
+
+      <!-- Season Filter Pills -->
+      <div class="d-flex justify-center gap-1 flex-wrap reveal-up" style="margin-bottom: 2.5rem;">
+        <button class="btn btn-sm btn-primary season-filter-tab" onclick="filterSeasons('all', this)"><i class="fa-solid fa-calendar-days"></i> All Seasons</button>
+        <button class="btn btn-sm btn-outline season-filter-tab" onclick="filterSeasons('spring', this)"><i class="fa-solid fa-seedling"></i> Spring Pasture</button>
+        <button class="btn btn-sm btn-outline season-filter-tab" onclick="filterSeasons('summer', this)"><i class="fa-solid fa-sun"></i> Summer Heat</button>
+        <button class="btn btn-sm btn-outline season-filter-tab" onclick="filterSeasons('autumn', this)"><i class="fa-solid fa-leaf"></i> Autumn Silage</button>
+        <button class="btn btn-sm btn-outline season-filter-tab" onclick="filterSeasons('winter', this)"><i class="fa-solid fa-snowflake"></i> Winter Energy</button>
+      </div>
+
+      <div class="grid-4" id="seasonalCardsGrid">
+        <!-- Spring -->
+        <div class="feature-box reveal-up delay-100 season-card" data-season="spring">
+          <img src="https://images.unsplash.com/photo-1573731399281-6540bc50ed91?auto=format&fit=crop&w=600&q=80" alt="Spring Pasture Grazing" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
+          <div class="feature-icon-wrap" style="background: var(--primary-subtle); color: var(--primary);">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h4>Spring Pasture &amp; Grass Tetany</h4>
+          <p>Lush early spring grasses are rich in potassium and nitrogen but critically low in magnesium and crude fiber.</p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.75rem;">
+            <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Provide high-magnesium mineral blocks.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Buffer lush pasture with long-stem dry hay.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Watch for frothy pasture bloat.</li>
+          </ul>
+        </div>
+
+        <!-- Summer -->
+        <div class="feature-box reveal-up delay-200 season-card" data-season="summer">
+          <img src="https://images.unsplash.com/photo-1657666314983-597a7e4e9fd5?auto=format&fit=crop&w=600&q=80" alt="Summer Barn Ventilation" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
+          <div class="feature-icon-wrap" style="background: var(--secondary-subtle); color: var(--secondary);">
+            <i class="fa-solid fa-sun"></i>
+          </div>
+          <h4>Summer Heat Stress Mitigation</h4>
+          <p>When the Temperature-Humidity Index (THI) exceeds 68, cows drop dry matter intake by up to 25%, risking severe acidosis.</p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.75rem;">
+            <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Shift 60% of feeding to evening/night.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Boost dietary potassium (1.5%) &amp; sodium.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Feed bypass fat to maintain energy density.</li>
+          </ul>
+        </div>
+
+        <!-- Autumn -->
+        <div class="feature-box reveal-up delay-300 season-card" data-season="autumn">
+          <img src="assets/images/blog/corn-silage-fermentation.jpg" alt="Autumn Silage Fermentation" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
+          <div class="feature-icon-wrap" style="background: var(--earth-subtle); color: var(--earth);">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h4>Autumn Silage &amp; Weaning</h4>
+          <p>Transitioning from fresh grazing to fermented silage requires strict bunker compaction to prevent aerobic spoilage.</p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.75rem;">
+            <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> Inoculate corn silage with homofermentative strains.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> Administer pre-weaning calf respiratory vaccines.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> Step up booster rations for replacement heifers.</li>
+          </ul>
+        </div>
+
+        <!-- Winter -->
+        <div class="feature-box reveal-up delay-400 season-card" data-season="winter">
+          <img src="https://images.unsplash.com/photo-1758456317292-7d39f0a663ba?auto=format&fit=crop&w=600&q=80" alt="Winter Cattle Energy" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
+          <div class="feature-icon-wrap" style="background: var(--vet-subtle); color: var(--vet-blue);">
+            <i class="fa-solid fa-snowflake"></i>
+          </div>
+          <h4>Winter Energy Maintenance</h4>
+          <p>For every degree below lower critical temperature (32°F / 0°C), a cow requires a 1% increase in Total Digestible Nutrients (TDN).</p>
+          <ul style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.75rem;">
+            <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> Increase concentrate energy by 10-15%.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> Ensure continuous warm, non-freezing water.</li>
+            <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> Maintain dry bedding to protect udder health.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feeding Schedules Table by Lifecycle Stage -->
+  <section class="section-padding" style="background-color: var(--bg-body);">
+    <div class="container">
+      <div class="section-header text-center reveal-up">
+        <span class="section-badge"><i class="fa-solid fa-table-list"></i> Precision Allocation</span>
+        <h2 class="section-title">Recommended Feeding Rates Across Lifecycle Stages</h2>
+        <p class="section-desc">Standard daily intake guidelines formulated for high-merit Holstein and Jersey dairy herds.</p>
+      </div>
+
+      <!-- Lifecycle Stage Filter Tabs -->
+      <div class="d-flex justify-center gap-1 flex-wrap reveal-up" style="margin-bottom: 2rem;">
+        <button class="btn btn-sm btn-primary stage-filter-tab" data-stage="all"><i class="fa-solid fa-cow"></i> All Stages</button>
+        <button class="btn btn-sm btn-outline stage-filter-tab" data-stage="calf"><i class="fa-solid fa-baby"></i> Calf Nursery</button>
+        <button class="btn btn-sm btn-outline stage-filter-tab" data-stage="heifer"><i class="fa-solid fa-seedling"></i> Breeding Heifers</button>
+        <button class="btn btn-sm btn-outline stage-filter-tab" data-stage="dry"><i class="fa-solid fa-hourglass-half"></i> Close-Up Dry</button>
+        <button class="btn btn-sm btn-outline stage-filter-tab" data-stage="lactation"><i class="fa-solid fa-droplet"></i> Peak Lactation</button>
+      </div>
+
+      <div class="table-responsive dashboard-card reveal-up" style="padding: 0; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th style="padding: 1.25rem;">Livestock Lifecycle Stage</th>
+              <th>Target DMI (% Body Wt)</th>
+              <th>Recommended Concentrate</th>
+              <th>Forage / Silage Ratio</th>
+              <th>Key Mineral / Supplement Additive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Calf Nursery (Day 1 - Weaning)</strong></td>
+              <td>1.8% - 2.2%</td>
+              <td>Calf Starter Growth Pellets (Ad libitum up to 2 kg)</td>
+              <td>Clean alfalfa / grass hay from wk 3</td>
+              <td><span class="badge badge-success">BoviStarter Probiotics</span></td>
+            </tr>
+            <tr>
+              <td><strong>Breeding Heifers (12-14 Months)</strong></td>
+              <td>2.4% - 2.6%</td>
+              <td>2.0 - 3.0 kg Growth Developer</td>
+              <td>70% Forage / 30% Concentrate</td>
+              <td><span class="badge badge-secondary">BoviMax Chelated Trace Pack</span></td>
+            </tr>
+            <tr>
+              <td><strong>Close-Up Dry Cows (Day -21 to 0)</strong></td>
+              <td>1.8% - 2.0%</td>
+              <td>3.0 - 4.0 kg Transition Guard</td>
+              <td>High low-potassium straw / corn silage</td>
+              <td><span class="badge badge-primary">Anionic Salts (-120 mEq DCAD)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Fresh Cows (Day 1 to 30)</strong></td>
+              <td>3.0% - 3.5%</td>
+              <td>8.0 - 10.0 kg Ultra-Lact Pro</td>
+              <td>50% High-quality forage / 50% TMR</td>
+              <td><span class="badge badge-warning">RumenSafe Bolus &amp; Yeast</span></td>
+            </tr>
+            <tr>
+              <td><strong>Peak Lactation (Day 30 to 120)</strong></td>
+              <td>3.8% - 4.2%</td>
+              <td>12.0 - 15.0 kg Ultra-Lact Pro 22%</td>
+              <td>45% Forage / 55% Concentrates</td>
+              <td><span class="badge badge-danger">99% Bypass Fat (300g/day)</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Cattle Nutrition & Ration Calculator Section -->
+  <section class="section-padding" id="nutrition-calculator" style="background-color: var(--bg-alt);">
+    <div class="container">
+      <div class="section-header text-center reveal-up">
+        <span class="section-badge"><i class="fa-solid fa-calculator"></i> Real-Time Herd Planner</span>
+        <h2 class="section-title">Interactive Cattle Ration &amp; Feed Calculator</h2>
+        <p class="section-desc">Estimate daily Dry Matter Intake (DMI), concentrate requirements, fresh forage allocation, and mineral intake in real time.</p>
+      </div>
+
+      <div class="grid-2 align-center">
+        <!-- Form Controls -->
+        <div class="dashboard-card reveal-left">
+          <h4 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-sliders" style="color: var(--primary);"></i> Herd Parameters</h4>
+          
+          <form id="rationCalculatorForm">
+            <div style="margin-bottom: 1.25rem;">
+              <label style="display: block; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.9rem;">Animal Production Stage:</label>
+              <select id="calcAnimalType" class="sort-select" style="width: 100%; padding: 0.75rem 1rem;">
+                <option value="lactating">High-Producing Lactating Dairy Cow</option>
+                <option value="dry">Dry / Pregnant Transition Cow</option>
+                <option value="calf">Growing Heifer / Calf</option>
+                <option value="beef">Beef Steer / Feedlot Cattle</option>
+              </select>
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <div class="d-flex justify-between align-center" style="margin-bottom: 0.4rem;">
+                <label style="font-weight: 700; font-size: 0.9rem;">Average Body Weight (kg):</label>
+                <span id="calcWeightVal" style="font-weight: 800; color: var(--primary);">550 kg</span>
+              </div>
+              <input type="range" id="calcBodyWeight" min="150" max="850" step="10" value="550" class="price-range-input">
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+              <div class="d-flex justify-between align-center" style="margin-bottom: 0.4rem;">
+                <label style="font-weight: 700; font-size: 0.9rem;">Target Daily Milk Yield (Liters/day):</label>
+                <span id="calcMilkVal" style="font-weight: 800; color: var(--secondary);">22 Liters/day</span>
+              </div>
+              <input type="range" id="calcMilkYield" min="0" max="50" step="1" value="22" class="price-range-input">
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-light); margin: 0;">
+              * Calculations adhere to NRC (National Research Council) bovine nutritional standards.
+            </p>
+          </form>
+        </div>
+
+        <!-- Calculated Output Cards -->
+        <div class="reveal-right">
+          <div style="background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-xl); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
+            <h4 style="margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+              <span>Recommended Daily Ration</span>
+              <span class="badge badge-success">Target Balanced</span>
+            </h4>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;">
+              <div style="background: var(--bg-body); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Est. Dry Matter Intake</div>
+                <div id="calcDMI" style="font-size: 1.6rem; font-weight: 800; color: var(--primary); font-family: var(--font-heading);">20.3 kg</div>
+                <div style="font-size: 0.75rem; color: var(--text-light);">DMI / cow / day</div>
+                <div class="progress-track" style="margin-top: 0.5rem; height: 4px;">
+                  <div class="progress-fill animated-bar-fill" id="calcDmiBar" style="width: 68%;"></div>
+                </div>
+              </div>
+
+              <div style="background: var(--bg-body); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Crude Protein Required</div>
+                <div id="calcCP" style="font-size: 1.6rem; font-weight: 800; color: var(--secondary); font-family: var(--font-heading);">2,530 g</div>
+                <div style="font-size: 0.75rem; color: var(--text-light);">Metabolizable protein</div>
+              </div>
+
+              <div style="background: var(--bg-body); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Concentrate Pellet</div>
+                <div id="calcConcentrate" style="font-size: 1.6rem; font-weight: 800; color: var(--primary-dark); font-family: var(--font-heading);">11.0 kg</div>
+                <div style="font-size: 0.75rem; color: var(--text-light);">BoviCure Ultra-Lact</div>
+                <div class="progress-track" style="margin-top: 0.5rem; height: 4px;">
+                  <div class="progress-fill animated-bar-fill" id="calcConcentrateBar" style="width: 55%; background: var(--secondary);"></div>
+                </div>
+              </div>
+
+              <div style="background: var(--bg-body); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Chelated Minerals</div>
+                <div id="calcMineral" style="font-size: 1.6rem; font-weight: 800; color: var(--vet-blue); font-family: var(--font-heading);">93 g</div>
+                <div style="font-size: 0.75rem; color: var(--text-light);">BoviMax Chelated</div>
+              </div>
+            </div>
+
+            <a href="contact.html?type=custom-ration" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-envelope-open-text"></i> Order Custom Formulated TMR Mix
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vaccination & Deworming Awareness Protocol -->
+  <section class="section-padding" style="background-color: var(--bg-surface);">
+    <div class="container">
+      <div class="grid-2 align-center">
+        <div class="reveal-left">
+          <span class="section-badge"><i class="fa-solid fa-syringe"></i> Preventative Medicine</span>
+          <h2 class="section-title">Annual Herd Vaccination &amp; Parasite Control</h2>
+          <p class="section-desc">Vaccination protocols should always be executed under the supervision of a licensed herd veterinarian. Preventative immunization saves up to $180 per head annually in treatment and culled cows.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+            <div style="background: var(--bg-body); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--primary);">
+              <h5 style="margin-bottom: 0.25rem;">Bovine Respiratory Disease (BRD) Complex</h5>
+              <p style="font-size: 0.88rem; margin: 0; color: var(--text-muted);">Protects against IBR, BVD (Types 1 &amp; 2), PI3, and BRSV. Administer modified-live vaccine (MLV) to heifers 30 days prior to breeding.</p>
+            </div>
+
+            <div style="background: var(--bg-body); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--secondary);">
+              <h5 style="margin-bottom: 0.25rem;">Clostridial 7-Way &amp; 8-Way (Blackleg)</h5>
+              <p style="font-size: 0.88rem; margin: 0; color: var(--text-muted);">Essential immunization against spore-forming soil bacteria. Initial dose at 2 months of age, booster at weaning, then annual booster.</p>
+            </div>
+
+            <div style="background: var(--bg-body); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--vet-blue);">
+              <h5 style="margin-bottom: 0.25rem;">Strategic Fluke &amp; Roundworm Drenching</h5>
+              <p style="font-size: 0.88rem; margin: 0; color: var(--text-muted);">Drench with BoviDeworm broad-spectrum anthelmintic suspension at turnout in spring and housing in late autumn.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=80" alt="Veterinary medicine and supplies" style="border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); width: 100%;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-separator-line" aria-hidden="true"></div>
+
+  <!-- Educational FAQ Accordion -->
+  <section class="section-padding" style="background-color: var(--bg-body);">
+    <div class="container" style="max-width: 900px;">
+      <div class="section-header text-center reveal-up">
+        <span class="section-badge"><i class="fa-solid fa-circle-question"></i> Veterinary Guidance</span>
+        <h2 class="section-title">Frequently Asked Livestock Care Questions</h2>
+        <p class="section-desc">Expert answers to common feeding and metabolic health challenges faced on modern dairy operations.</p>
+      </div>
+
+      <div class="d-flex flex-column gap-2 accordion-group-exclusive">
+        <!-- FAQ 1 -->
+        <div class="feature-box accordion-item active" style="padding: 1.25rem 1.75rem; cursor: pointer;">
+          <div class="accordion-header d-flex justify-between align-center">
+            <h4 style="margin: 0; font-size: 1.1rem;">How can I tell if my cows are suffering from Subacute Ruminal Acidosis (SARA)?</h4>
+            <i class="fa-solid fa-chevron-down accordion-icon" style="color: var(--primary); transition: transform 0.3s ease; transform: rotate(180deg);"></i>
+          </div>
+          <div class="accordion-body" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+            Subacute Ruminal Acidosis occurs when rumen pH drops between 5.2 and 5.6 for prolonged periods. Classic symptoms include reduced rumination (less than 50% of resting cows chewing their cud), bubbly diarrhea with undigested grain particles, fluctuating daily milk yields, and unexplained drop in milk butterfat percentage below 3.2%. Administering sustained-release sodium bicarbonate boluses and balancing effective fiber (peNDF) immediately restores rumen balance.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="feature-box accordion-item" style="padding: 1.25rem 1.75rem; cursor: pointer;">
+          <div class="accordion-header d-flex justify-between align-center">
+            <h4 style="margin: 0; font-size: 1.1rem;">Why are organic chelated minerals superior to generic inorganic minerals?</h4>
+            <i class="fa-solid fa-chevron-down accordion-icon" style="color: var(--primary); transition: transform 0.3s ease;"></i>
+          </div>
+          <div class="accordion-body" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+            Inorganic trace minerals (such as oxides and sulfates) dissociate readily in the rumen and bind with antagonists like sulfur, molybdenum, and iron, rendering them unabsorbable in the small intestine. In contrast, organic chelated minerals (such as BoviMax zinc and copper glycinates) remain chemically intact through the acidic abomasum and are actively absorbed through amino acid transport pathways, achieving 3x higher bioavailability.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="feature-box accordion-item" style="padding: 1.25rem 1.75rem; cursor: pointer;">
+          <div class="accordion-header d-flex justify-between align-center">
+            <h4 style="margin: 0; font-size: 1.1rem;">What is the target blood Brix percentage for newborn calf colostrum?</h4>
+            <i class="fa-solid fa-chevron-down accordion-icon" style="color: var(--primary); transition: transform 0.3s ease;"></i>
+          </div>
+          <div class="accordion-body" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+            Using an optical or digital Brix refractometer, maternal colostrum should test at 22% Brix or higher (equivalent to 50 g/L of IgG antibodies) before feeding. Newborn calves should receive 4 liters of high-quality colostrum within the first 2 hours of life, followed by a second feeding of 2 liters at 12 hours. At 24 to 48 hours of life, a serum Brix reading of 8.4% or higher indicates successful passive transfer of immunity.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="feature-box accordion-item" style="padding: 1.25rem 1.75rem; cursor: pointer;">
+          <div class="accordion-header d-flex justify-between align-center">
+            <h4 style="margin: 0; font-size: 1.1rem;">How does bypass fat increase milk production without triggering rumen upset?</h4>
+            <i class="fa-solid fa-chevron-down accordion-icon" style="color: var(--primary); transition: transform 0.3s ease;"></i>
+          </div>
+          <div class="accordion-body" style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-light); font-size: 0.95rem; color: var(--text-muted); line-height: 1.6;">
+            Free unsaturated oils (like vegetable oils) coat fiber particles in the rumen, suffocating fiber-digesting microbes and depressing butterfat. Fractionated bypass fats (calcium salts of fatty acids or high-palmitic prilled fats) are insoluble at normal ruminal pH (6.5). They pass completely inert through the rumen into the acidic abomasum (pH 2.5), where they dissociate and are digested in the small intestine, providing dense energy without hindering rumen bacteria.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section-padding-sm" style="background-color: var(--primary-dark); color: #ffffff;">
+    <div class="container text-center reveal-zoom">
+      <h2 style="color: #ffffff; margin-bottom: 0.75rem;">Need Tailored Feeding Protocols For Your Herd?</h2>
+      <p style="color: rgba(255,255,255,0.85); max-width: 600px; margin: 0 auto 2rem;">Connect with one of our field veterinarians or certified animal nutritionists for an in-depth farm ration evaluation.</p>
+      <div class="d-flex justify-center gap-2 flex-wrap">
+        <a href="contact.html" class="btn btn-secondary btn-lg"><i class="fa-solid fa-stethoscope"></i> Request Herd Consultation</a>
+        <a href="products.html" class="btn btn-outline-white btn-lg"><i class="fa-solid fa-boxes-stacked"></i> Explore Feed Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="grid-4">
+        <!-- Widget 1: Brand Info -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1.25rem;">
+            <div class="brand-icon-box">
+            <img src="assets/images/logo-icon.svg" alt="BoviCure &amp; Feeds™ Logo" width="44" height="44">
+          </div>
+            <div class="brand-text">
+              <span class="brand-name" style="color: #ffffff;">BoviCure<span style="color: var(--secondary);">&amp;</span>Feeds</span>
+              <span class="brand-tagline">Livestock &amp; Veterinary</span>
+            </div>
+          </a>
+          <p style="color: #a4b8ab; font-size: 0.92rem; line-height: 1.6;">Precision agricultural feeds, organic chelated mineral mixtures, and clinical-grade veterinary supplies dedicated to livestock vitality and sustainable farm prosperity.</p>
+          <div class="footer-social-row">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Facebook" aria-label="Visit Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="YouTube" aria-label="Visit YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram" aria-label="Visit Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Widget 2: Quick Links -->
+        <div>
+          <h4 class="footer-widget-title">Quick Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Home Overview</a></li>
+            <li><a href="about.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Our Mill &amp; Team</a></li>
+            <li><a href="products.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Complete Product Catalog</a></li>
+            <li><a href="livestock-care.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Livestock Care &amp; Rations</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Farm Services &amp; Logistics</a></li>
+            <li><a href="contact.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Contact &amp; Bulk Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Widget 3: Categories -->
+        <div>
+          <h4 class="footer-widget-title">Product Categories</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html?category=dairy-feed" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> High-Yield Dairy Feeds</a></li>
+            <li><a href="products.html?category=mineral-mixtures" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Chelated Mineral Mixtures</a></li>
+            <li><a href="products.html?category=cattle-feed" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Calf Starters &amp; Heifer Pellets</a></li>
+            <li><a href="products.html?category=feed-supplements" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Bypass Fats &amp; Rumen Buffers</a></li>
+            <li><a href="products.html?category=veterinary-medicines" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Veterinary Medications</a></li>
+            <li><a href="products.html?category=poultry-feed" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Poultry &amp; Layer Feeds</a></li>
+          </ul>
+        </div>
+
+        <!-- Widget 4: Contact Info -->
+        <div>
+          <h4 class="footer-widget-title">Dispatch &amp; Support</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>4820 Agri-Valley Parkway, Feed Mill District, Des Moines, IA 50309</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+1 (800) 458-FEED / +1 (515) 390-2810</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>orders@bovicurefeeds.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>ISO 9001:2015 &amp; GMP+ Certified Facility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 BoviCure &amp; Feeds™ Inc. All rights reserved. Built for professional cattle &amp; livestock management.
+        </div>
+        <div class="d-flex align-center gap-3">
+          <a href="#" class="footer-link" style="font-size:0.85rem;">Privacy Policy</a>
+          <a href="#" class="footer-link" style="font-size:0.85rem;">Terms of Supply</a>
+          <a href="#" class="footer-link" style="font-size:0.85rem;">Biosecurity Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals & Drawers -->
+  <div class="drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <div class="drawer-title"><i class="fa-solid fa-bag-shopping" style="color: var(--primary);"></i> Farm Cart</div>
+      <button class="drawer-close-btn" id="closeCartDrawer"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items-list" id="cartItemsList"></div>
+    <div class="drawer-footer">
+      <div class="cart-subtotal-row"><span>Estimated Subtotal:</span><span id="cartSubtotal">$85.00</span></div>
+      <div class="d-flex flex-column gap-2">
+        <button class="btn btn-primary btn-lg" onclick="window.openCheckoutModal()" style="width: 100%;">
+          <i class="fa-solid fa-credit-card"></i> Proceed to Express Checkout
+        </button>
+        <a href="contact.html?type=bulk" class="btn btn-secondary btn-sm" style="width: 100%;">
+          <i class="fa-solid fa-file-invoice"></i> Request Bulk Order Quote
+        </a>
+        <button class="btn btn-outline btn-sm" style="width: 100%;" onclick="window.closeCartDrawer()">
+          Continue Browsing Feeds
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-text"><span class="brand-name">BoviCure<span style="color: var(--secondary);">&amp;</span>Feeds</span></div>
+      <button class="drawer-close-btn" id="closeMobileDrawer"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-links">
+        <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+        <li class="mobile-nav-item"><a href="index-2.html" class="mobile-nav-link">Home 2</a></li>
+        <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li class="mobile-nav-item"><a href="products.html" class="mobile-nav-link">Products</a></li>
+        <li class="mobile-nav-item"><a href="livestock-care.html" class="mobile-nav-link active">Livestock Care</a></li>
+        <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li class="mobile-nav-item"><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-dialog search-modal-dialog">
+      <div class="d-flex align-center justify-between" style="margin-bottom: 1.25rem;">
+        <h4 style="margin: 0;"><i class="fa-solid fa-magnifying-glass" style="color: var(--primary);"></i> Search Catalog</h4>
+        <button class="action-btn" id="closeSearchModal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="search-input-wrap">
+        <i class="fa-solid fa-search"></i>
+        <input type="text" id="globalSearchInput" placeholder="Search by name, category, or formulation...">
+      </div>
+      <div class="search-results-list" id="globalSearchResults"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="quickview-body"></div>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/slider.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Commercial cattle feed catalog, high-yield dairy rations, chelated mineral mixtures, calf starters, and veterinary supplies.">
+  <title>Cattle Feed &amp; Veterinary Supplies Catalog | BoviCure &amp; Feeds™</title>
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <!-- Favicon & Mobile App Icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo-icon.svg">
+  <link rel="alternate icon" type="image/png" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <meta property="og:image" content="assets/images/og-preview.jpg">
+  <meta name="twitter:image" content="assets/images/og-preview.jpg">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header header-transparent" data-transparent="true">
+    <!-- Main Navigation Bar -->
+    <nav class="navbar-main">
+      <div class="container navbar-container">
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon-box">
+            <img src="assets/images/logo-icon.svg" alt="BoviCure &amp; Feeds™ Logo" width="44" height="44">
+          </div>
+          <div class="brand-text">
+            <span class="brand-name">BoviCure<span style="color: var(--secondary);">&amp;</span>Feeds</span>
+            <span class="brand-tagline">Livestock &amp; Veterinary</span>
+          </div>
+        </a>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link">Home <i class="fa-solid fa-angle-down"></i></a>
+            <div class="dropdown-menu">
+              <a href="index.html" class="dropdown-link">Home 1 – Agricultural Landing</a>
+              <a href="index-2.html" class="dropdown-link">Home 2 – Livestock &amp; Vet Niche</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+          <li class="nav-item"><a href="products.html" class="nav-link active">Products</a></li>
+          <li class="nav-item"><a href="livestock-care.html" class="nav-link">Livestock Care</a></li>
+          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="action-btn search-toggle-btn" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+          <button class="action-btn cart-toggle-btn" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="cart-count-badge">2</span></button>
+          <button class="action-btn theme-toggle-btn" title="Light Mode Active (Click for Dark Mode)">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+          <button class="action-btn rtl-toggle-btn" title="Toggle RTL/LTR layout" aria-label="Toggle RTL/LTR layout"><i class="fa-solid fa-right-left"></i></button>
+          <a href="contact.html?type=bulk" class="btn btn-secondary btn-sm d-none d-lg-inline-flex"><i class="fa-solid fa-file-invoice"></i> Bulk Order</a>
+          <button class="action-btn hamburger-btn"><i class="fa-solid fa-bars-staggered"></i></button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Page Hero Banner -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80');"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
+        <span class="current">Products Catalog</span>
+      </div>
+      <h1 style="color: #ffffff; margin-bottom: 0.85rem;">Precision Feeds, Minerals &amp; Veterinary Supplies</h1>
+      <p style="color: rgba(255, 255, 255, 0.88); font-size: 1.15rem; max-width: 680px; margin: 0 auto;">Tested for purity, high nutrient density, and certified bio-availability. Filter by cattle production stage or therapeutic requirement.</p>
+    </div>
+  </section>
+
+  <!-- Main Catalog Section -->
+  <section class="section-padding" style="background-color: var(--bg-body);">
+    <div class="container">
+      <div class="catalog-layout">
+        
+        <!-- Sidebar Filters -->
+        <aside class="catalog-sidebar reveal-left">
+          <!-- Search box -->
+          <div class="filter-group">
+            <h4 class="filter-title"><span>Search Catalog</span> <i class="fa-solid fa-magnifying-glass" style="font-size:0.9rem; color:var(--text-light);"></i></h4>
+            <div class="filter-search-box">
+              <i class="fa-solid fa-search"></i>
+              <input type="text" id="catalogSearchInput" class="filter-search-input" placeholder="Keyword, e.g. 'yeast'...">
+            </div>
+          </div>
+
+          <!-- Category filter list -->
+          <div class="filter-group">
+            <h4 class="filter-title"><span>Categories</span> <i class="fa-solid fa-layer-group" style="font-size:0.9rem; color:var(--text-light);"></i></h4>
+            <div class="category-filter-list">
+              <div class="category-filter-item active" data-category="all">
+                <span>All Products</span>
+                <span class="category-count">12</span>
+              </div>
+              <div class="category-filter-item" data-category="dairy-feed">
+                <span>Dairy Feed</span>
+                <span class="category-count">2</span>
+              </div>
+              <div class="category-filter-item" data-category="mineral-mixtures">
+                <span>Mineral Mixtures</span>
+                <span class="category-count">1</span>
+              </div>
+              <div class="category-filter-item" data-category="cattle-feed">
+                <span>Cattle Feed</span>
+                <span class="category-count">1</span>
+              </div>
+              <div class="category-filter-item" data-category="feed-supplements">
+                <span>Feed Supplements</span>
+                <span class="category-count">2</span>
+              </div>
+              <div class="category-filter-item" data-category="veterinary-medicines">
+                <span>Veterinary Medicines</span>
+                <span class="category-count">2</span>
+              </div>
+              <div class="category-filter-item" data-category="animal-health-products">
+                <span>Animal Health Products</span>
+                <span class="category-count">1</span>
+              </div>
+              <div class="category-filter-item" data-category="livestock-nutrition">
+                <span>Livestock Nutrition</span>
+                <span class="category-count">2</span>
+              </div>
+              <div class="category-filter-item" data-category="poultry-feed">
+                <span>Poultry Feed</span>
+                <span class="category-count">1</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price Range Slider -->
+          <div class="filter-group">
+            <h4 class="filter-title"><span>Max Price</span> <span id="priceValueDisplay" style="color:var(--primary); font-size:1.05rem;">$100</span></h4>
+            <div class="price-slider-wrap">
+              <input type="range" id="priceRange" min="10" max="100" step="5" value="100" class="price-range-input">
+              <div class="price-values-row">
+                <span>$10</span>
+                <span>$100</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Reset Button -->
+          <div style="margin-top: 1.5rem;">
+            <button class="btn btn-outline btn-sm" style="width: 100%;" onclick="window.resetCatalogFilters()">
+              <i class="fa-solid fa-arrow-rotate-left"></i> Reset All Filters
+            </button>
+          </div>
+
+          <!-- Need Bulk Delivery banner -->
+          <div style="margin-top: 2rem; background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div class="d-flex align-center gap-2" style="margin-bottom: 0.5rem; color: var(--secondary);">
+              <i class="fa-solid fa-truck-moving" style="font-size: 1.3rem;"></i>
+              <strong style="color: var(--text-main); font-size: 0.95rem;">Bulk Silo Loads?</strong>
+            </div>
+            <p style="font-size: 0.82rem; margin-bottom: 0.85rem;">Order 10+ metric tons with scheduled monthly delivery to receive custom volume discounts.</p>
+            <a href="contact.html?type=bulk" class="btn btn-primary btn-sm" style="width: 100%;">
+              Inquire Bulk Freight
+            </a>
+          </div>
+        </aside>
+
+        <!-- Main Products Display Area -->
+        <main class="catalog-main-content">
+          <!-- Top Sorting & Count Bar -->
+          <div class="catalog-top-bar reveal-up">
+            <div id="productsCount" style="font-weight: 700; color: var(--text-main); font-size: 0.95rem;">
+              Showing 12 products
+            </div>
+            <div class="d-flex align-center gap-2">
+              <label for="catalogSortSelect" style="font-size: 0.88rem; color: var(--text-muted); font-weight: 600;">Sort By:</label>
+              <select id="catalogSortSelect" class="sort-select">
+                <option value="featured">Featured Feeds</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+                <option value="title">Alphabetical (A - Z)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Products Grid (Dynamically rendered by products.js) -->
+          <div class="grid-3" id="productsGrid">
+            <!-- Dynamically populated by assets/js/products.js -->
+          </div>
+
+          <!-- Pagination or Load More -->
+          <div class="text-center" style="margin-top: 3.5rem;">
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">Showing all 12 commercial formulations currently available in stock.</p>
+            <button class="btn btn-outline" onclick="window.showToast('All currently active catalog items are loaded.', 'info')">
+              <i class="fa-solid fa-check"></i> All Items Loaded
+            </button>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <div class="grid-4">
+        <!-- Widget 1: Brand Info -->
+        <div>
+          <a href="index.html" class="brand-logo" style="margin-bottom: 1.25rem;">
+            <div class="brand-icon-box">
+            <img src="assets/images/logo-icon.svg" alt="BoviCure &amp; Feeds™ Logo" width="44" height="44">
+          </div>
+            <div class="brand-text">
+              <span class="brand-name" style="color: #ffffff;">BoviCure<span style="color: var(--secondary);">&amp;</span>Feeds</span>
+              <span class="brand-tagline">Livestock &amp; Veterinary</span>
+            </div>
+          </a>
+          <p style="color: #a4b8ab; font-size: 0.92rem; line-height: 1.6;">Precision agricultural feeds, organic chelated mineral mixtures, and clinical-grade veterinary supplies dedicated to livestock vitality and sustainable farm prosperity.</p>
+          <div class="footer-social-row">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Facebook" aria-label="Visit Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="YouTube" aria-label="Visit YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" title="Instagram" aria-label="Visit Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <!-- Widget 2: Quick Links -->
+        <div>
+          <h4 class="footer-widget-title">Quick Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Home Overview</a></li>
+            <li><a href="about.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> About Our Mill &amp; Team</a></li>
+            <li><a href="products.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Complete Product Catalog</a></li>
+            <li><a href="livestock-care.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Livestock Care &amp; Rations</a></li>
+            <li><a href="services.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Farm Services &amp; Logistics</a></li>
+            <li><a href="contact.html" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Contact &amp; Bulk Quote</a></li>
+          </ul>
+        </div>
+
+        <!-- Widget 3: Categories -->
+        <div>
+          <h4 class="footer-widget-title">Product Categories</h4>
+          <ul class="footer-links-list">
+            <li><a href="products.html?category=dairy-feed" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> High-Yield Dairy Feeds</a></li>
+            <li><a href="products.html?category=mineral-mixtures" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Chelated Mineral Mixtures</a></li>
+            <li><a href="products.html?category=cattle-feed" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Calf Starters &amp; Heifer Pellets</a></li>
+            <li><a href="products.html?category=feed-supplements" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Bypass Fats &amp; Rumen Buffers</a></li>
+            <li><a href="products.html?category=veterinary-medicines" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Veterinary Medications</a></li>
+            <li><a href="products.html?category=poultry-feed" class="footer-link"><i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i> Poultry &amp; Layer Feeds</a></li>
+          </ul>
+        </div>
+
+        <!-- Widget 4: Contact Info -->
+        <div>
+          <h4 class="footer-widget-title">Dispatch &amp; Support</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>4820 Agri-Valley Parkway, Feed Mill District, Des Moines, IA 50309</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <span>+1 (800) 458-FEED / +1 (515) 390-2810</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <span>orders@bovicurefeeds.com</span>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>ISO 9001:2015 &amp; GMP+ Certified Facility</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>
+          &copy; 2026 BoviCure &amp; Feeds™ Inc. All rights reserved. Built for professional cattle &amp; livestock management.
+        </div>
+        <div class="d-flex align-center gap-3">
+          <a href="#" class="footer-link" style="font-size:0.85rem;">Privacy Policy</a>
+          <a href="#" class="footer-link" style="font-size:0.85rem;">Terms of Supply</a>
+          <a href="#" class="footer-link" style="font-size:0.85rem;">Biosecurity Standards</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reusable Slide-Over Shopping Cart Drawer & Modals -->
+  <div class="drawer-backdrop" id="cartBackdrop"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="drawer-header">
+      <div class="drawer-title">
+        <i class="fa-solid fa-bag-shopping" style="color: var(--primary);"></i>
+        <span>Farm Cart (<span class="cart-count-badge" style="position:static; display:inline-flex;">2</span>)</span>
+      </div>
+      <button class="drawer-close-btn" id="closeCartDrawer"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div style="padding: 1rem 1.6rem; background: var(--bg-body); border-bottom: 1px solid var(--border-light);">
+      <div class="free-shipping-bar">
+        <div class="free-shipping-text" id="freeShippingText">Add $65.00 more for Free Farm Delivery!</div>
+        <div class="progress-track"><div class="progress-fill" id="freeShippingProgress" style="width: 56%;"></div></div>
+      </div>
+    </div>
+    <div class="cart-items-list" id="cartItemsList"></div>
+    <div class="drawer-footer">
+      <div class="cart-subtotal-row"><span>Estimated Subtotal:</span><span id="cartSubtotal" style="color: var(--primary);">$85.00</span></div>
+      <div class="d-flex flex-column gap-2">
+        <button class="btn btn-primary btn-lg" onclick="window.openCheckoutModal()" style="width: 100%;">
+          <i class="fa-solid fa-credit-card"></i> Proceed to Express Checkout
+        </button>
+        <a href="contact.html?type=bulk" class="btn btn-secondary btn-sm" style="width: 100%;">
+          <i class="fa-solid fa-file-invoice"></i> Request Bulk Order Quote
+        </a>
+        <button class="btn btn-outline btn-sm" style="width: 100%;" onclick="window.closeCartDrawer()">
+          Continue Browsing Feeds
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Mobile Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <div class="brand-text"><span class="brand-name">BoviCure<span style="color: var(--secondary);">&amp;</span>Feeds</span></div>
+      <button class="drawer-close-btn" id="closeMobileDrawer"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="mobile-drawer-body">
+      <ul class="mobile-nav-links">
+        <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home 1</a></li>
+        <li class="mobile-nav-item"><a href="index-2.html" class="mobile-nav-link">Home 2</a></li>
+        <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li class="mobile-nav-item"><a href="products.html" class="mobile-nav-link active">Products</a></li>
+        <li class="mobile-nav-item"><a href="livestock-care.html" class="mobile-nav-link">Livestock Care</a></li>
+        <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></li>
+        <li class="mobile-nav-item"><a href="blog.html" class="mobile-nav-link">Blog</a></li>
+        <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-dialog search-modal-dialog">
+      <div class="d-flex align-center justify-between" style="margin-bottom: 1.25rem;">
+        <h4 style="margin: 0;"><i class="fa-solid fa-magnifying-glass" style="color: var(--primary);"></i> Search Catalog</h4>
+        <button class="action-btn" id="closeSearchModal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="search-input-wrap">
+        <i class="fa-solid fa-search"></i>
+        <input type="text" id="globalSearchInput" placeholder="Search by name, category, or formulation...">
+      </div>
+      <div class="search-results-list" id="globalSearchResults"></div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="modal-overlay" id="quickViewModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+      <div class="quickview-body"></div>
+    </div>
+  </div>
+
+  <button class="back-to-top" id="backToTopBtn"><i class="fa-solid fa-arrow-up"></i></button>
+
+  <script src="assets/js/theme.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/slider.js"></script>
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

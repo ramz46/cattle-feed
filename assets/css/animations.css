@@ -1,0 +1,1163 @@
+/* ==========================================================================
+   BOVICURE & FEEDS™ – WOW ANIMATIONS & ADVANCED MOTION DESIGN
+   Pure CSS3 Keyframes, Spring Physics & Cinematic Easing Curves
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. SMOOTH PAGE ENTRANCE & EXIT TRANSITIONS (Single Page App Feel)
+   -------------------------------------------------------------------------- */
+body {
+  opacity: 0;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.page-loaded {
+  opacity: 1;
+  transform: none !important;
+}
+
+body.page-transitioning-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Fallback if JS takes longer */
+@media print {
+  body { opacity: 1 !important; transform: none !important; }
+}
+
+/* Keyframe Definitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(0.8deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@keyframes floatReverse {
+  0% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+  50% {
+    transform: translateY(6px) rotate(0.5deg);
+  }
+  100% {
+    transform: translateY(-8px) rotate(-0.5deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(217, 119, 6, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(217, 119, 6, 0.7);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes textGradientWave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes badgeIconPulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(6deg);
+    color: var(--secondary);
+  }
+}
+
+@keyframes badgeBorderGleam {
+  0% {
+    border-color: rgba(43, 122, 70, 0.25);
+    box-shadow: 0 0 0 0 rgba(43, 122, 70, 0);
+  }
+  50% {
+    border-color: rgba(217, 119, 6, 0.6);
+    box-shadow: 0 0 16px rgba(217, 119, 6, 0.25);
+  }
+  100% {
+    border-color: rgba(43, 122, 70, 0.25);
+    box-shadow: 0 0 0 0 rgba(43, 122, 70, 0);
+  }
+}
+
+@keyframes ambientFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(25px, -30px) scale(1.12);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate(-20px, 18px) scale(0.95);
+    opacity: 0.18;
+  }
+}
+
+@keyframes heroGradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Scroll Triggered Reveal Classes (Intersection Observer) */
+.reveal,
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px) scale(0.99);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px) scale(0.99);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px) scale(0.99);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-zoom {
+  opacity: 0;
+  transform: scale(0.95) translateY(16px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+/* Active / Revealed State */
+.reveal.is-revealed,
+.reveal-up.is-revealed,
+.reveal-left.is-revealed,
+.reveal-right.is-revealed,
+.reveal-zoom.is-revealed {
+  opacity: 1;
+  transform: translate(0) scale(1);
+  filter: none !important;
+}
+
+/* Stagger Delay Utility Classes */
+.delay-100 { transition-delay: 100ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-250 { transition-delay: 250ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+.delay-600 { transition-delay: 600ms; }
+
+/* Interactive Hover Animations */
+.hover-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+}
+
+.hover-scale {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.04);
+}
+
+.hover-glow {
+  transition: box-shadow 0.35s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 24px rgba(43, 122, 70, 0.4);
+}
+
+/* Floating Elements */
+.float-element {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.float-element-reverse {
+  animation: floatReverse 6s ease-in-out infinite;
+}
+
+/* Shimmer Loading Effect for Skeletons */
+.shimmer-loading {
+  background: linear-gradient(90deg, var(--bg-subtle) 25%, var(--bg-alt) 50%, var(--bg-subtle) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+/* Pulse Badge */
+.pulse-badge {
+  position: relative;
+}
+
+.pulse-badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid currentColor;
+  opacity: 0.6;
+  animation: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* ==========================================================================
+   ADVANCED BUTTON & MICRO-INTERACTION ANIMATIONS
+   ========================================================================== */
+
+/* Universal Material Click Ripple Effect */
+.btn-ripple-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: rippleWave 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
+  background-color: rgba(255, 255, 255, 0.45);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.btn-outline .btn-ripple,
+.btn-outline-white .btn-ripple,
+.action-btn .btn-ripple,
+.action-float-btn .btn-ripple {
+  background-color: rgba(30, 86, 49, 0.3);
+}
+
+[data-theme="dark"] .btn-outline .btn-ripple,
+[data-theme="dark"] .action-btn .btn-ripple {
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+@keyframes rippleWave {
+  to {
+    transform: scale(3.5);
+    opacity: 0;
+  }
+}
+
+/* Button Shimmer Gleam on Hover */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.32) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.btn-shimmer:hover::after {
+  opacity: 1;
+  animation: btnGleam 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes btnGleam {
+  0% {
+    left: -60%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+
+/* Wishlist Heart Bounce Animation */
+.heart-pop {
+  animation: heartBounce 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes heartBounce {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.45);
+  }
+  75% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Active Wishlist Heart Styling */
+.wishlist-btn.active {
+  color: #ef4444 !important;
+  background-color: #fee2e2 !important;
+  border-color: #fca5a5 !important;
+}
+
+[data-theme="dark"] .wishlist-btn.active {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+.wishlist-btn.active i {
+  color: #ef4444 !important;
+}
+
+/* Cart Badge Pop */
+.badge-pop {
+  animation: badgePop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.35);
+}
+
+@keyframes badgePop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Pulsing Video Play Button Rings */
+.pulse-rings {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pulse-rings::before,
+.pulse-rings::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary);
+  opacity: 0.8;
+  animation: pulseRingAnim 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  pointer-events: none;
+}
+
+.pulse-rings::after {
+  animation-delay: 1.1s;
+}
+
+@keyframes pulseRingAnim {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.9;
+  }
+  70% {
+    transform: scale(1.55);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+/* Tab Switching Fade & Slide Animations */
+.tab-content-pane {
+  opacity: 0;
+  transform: translateY(12px);
+  display: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.tab-content-pane.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Dynamic Gauge / Progress Fill Animation */
+.animated-bar-fill {
+  transition: width 0.75s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+}
+
+/* Confetti Sparkles */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-20px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(180px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Smooth Interactive Scale on Button Active */
+.btn:active,
+.action-btn:active,
+.action-float-btn:active,
+.tbl-action-btn:active {
+  transform: scale(0.92) !important;
+}
+
+/* Row Fade-Out & Flash Highlights for Admin Tables */
+@keyframes rowFadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(36px);
+  }
+}
+
+@keyframes rowFlashHighlight {
+  0% {
+    background-color: rgba(43, 122, 70, 0.35);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.row-fade-out {
+  animation: rowFadeOut 0.35s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.row-flash {
+  animation: rowFlashHighlight 1.5s ease;
+}
+
+/* Interactive Card Focus & Hover Polish */
+.product-card {
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.38s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.38s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  border-color: rgba(30, 86, 49, 0.35);
+}
+
+.product-thumb-wrap img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-thumb-wrap img {
+  transform: scale(1.07);
+}
+
+/* ==========================================================================
+   ADVANCED SECTION TRANSITIONS, IN-BETWEEN DEPTH & AMBIENT VISUALS
+   ========================================================================== */
+
+/* Top Interactive Reading/Scroll Progress Bar */
+#scrollProgressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3.5px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--secondary) 0%, #10b981 50%, var(--primary-light) 100%);
+  box-shadow: 0 0 14px rgba(217, 119, 6, 0.7), 0 0 4px rgba(16, 185, 129, 0.8);
+  z-index: 10002;
+  pointer-events: none;
+  transition: width 0.12s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Subtle Modern Tech Dot-Grid Mesh on Alternating Sections */
+.bg-mesh-surface,
+section[style*="background-color: var(--bg-surface)"],
+.section-padding:not(.stats-section):nth-of-type(even) {
+  position: relative;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(43, 122, 70, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.045) 0px, transparent 50%),
+    radial-gradient(rgba(30, 86, 49, 0.07) 1.25px, transparent 1.25px);
+  background-size: 100% 100%, 100% 100%, 28px 28px;
+}
+
+[data-theme="dark"] .bg-mesh-surface,
+[data-theme="dark"] section[style*="background-color: var(--bg-surface)"],
+[data-theme="dark"] .section-padding:not(.stats-section):nth-of-type(even) {
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(56, 161, 105, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.06) 0px, transparent 50%),
+    radial-gradient(rgba(255, 255, 255, 0.04) 1.25px, transparent 1.25px);
+}
+
+/* Section Header Separator & Badge Polish */
+.section-badge {
+  position: relative;
+  animation: badgeBorderGleam 4s ease-in-out infinite;
+  box-shadow: 0 2px 14px rgba(43, 122, 70, 0.12);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(43, 122, 70, 0.24);
+}
+
+.section-badge i {
+  display: inline-block;
+  animation: badgeIconPulse 2.8s ease-in-out infinite;
+}
+
+.section-header.text-center .section-title::after {
+  content: '';
+  display: block;
+  width: 68px;
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--primary-light) 100%);
+  margin: 0.95rem auto 0;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(217, 119, 6, 0.35);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.section-header.text-center:hover .section-title::after {
+  width: 110px;
+}
+
+/* Universal Card Polish: Top Accent Line & Dynamic Spotlight Glow */
+.product-card,
+.feature-box,
+.testimonial-card,
+.service-card,
+.blog-card,
+.dashboard-card,
+.service-detail-card,
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+}
+
+/* Top Accent Line on Card Hover */
+.product-card::before,
+.feature-box::before,
+.testimonial-card::before,
+.service-card::before,
+.blog-card::before,
+.dashboard-card::before,
+.service-detail-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3.5px;
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--primary-light) 60%, #10b981 100%);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 4;
+}
+
+.product-card:hover::before,
+.feature-box:hover::before,
+.testimonial-card:hover::before,
+.service-card:hover::before,
+.blog-card:hover::before,
+.dashboard-card:hover::before,
+.service-detail-card:hover::before {
+  width: 100%;
+}
+
+/* Dynamic Cursor Spotlight Overlay (Driven by mousemove in animations.js) */
+.spotlight-active::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    380px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(43, 122, 70, 0.12) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 3;
+}
+
+[data-theme="dark"] .spotlight-active::after {
+  background: radial-gradient(
+    380px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(217, 119, 6, 0.14) 0%,
+    transparent 65%
+  );
+}
+
+.spotlight-active:hover::after {
+  opacity: 1;
+}
+
+/* Rich Elevation on Card Hover across ALL cards */
+.product-card:hover,
+.feature-box:hover,
+.testimonial-card:hover,
+.service-card:hover,
+.blog-card:hover,
+.service-detail-card:hover {
+  transform: translateY(-9px) scale(1.008);
+  box-shadow: 0 24px 48px -12px rgba(30, 86, 49, 0.18), 0 0 1px 1px rgba(43, 122, 70, 0.12);
+  border-color: rgba(43, 122, 70, 0.38) !important;
+}
+
+[data-theme="dark"] .product-card:hover,
+[data-theme="dark"] .feature-box:hover,
+[data-theme="dark"] .testimonial-card:hover,
+[data-theme="dark"] .service-card:hover,
+[data-theme="dark"] .blog-card:hover,
+[data-theme="dark"] .service-detail-card:hover {
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.5), 0 0 2px 1px rgba(217, 119, 6, 0.25);
+  border-color: rgba(217, 119, 6, 0.4) !important;
+}
+
+/* Thumbnail Zoom and Ambient Sheen on Card Hover */
+.product-thumb-wrap img,
+.blog-thumb-wrap img,
+.service-thumb-wrap img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.product-card:hover .product-thumb-wrap img,
+.blog-card:hover .blog-thumb-wrap img,
+.service-card:hover .service-thumb-wrap img {
+  transform: scale(1.08);
+  filter: contrast(1.04) brightness(1.02);
+}
+
+/* Feature Icon Wrap Glow & Spin */
+.feature-icon-wrap,
+.service-icon-box {
+  position: relative;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.feature-box:hover .feature-icon-wrap,
+.service-card:hover .service-icon-box {
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 10px 24px rgba(43, 122, 70, 0.3);
+}
+
+/* Animated Link Arrow Glide */
+.read-more-btn,
+a.read-more-btn,
+.btn i.fa-arrow-right,
+.read-more-btn i,
+.dropdown-link i,
+.footer-link i {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+}
+
+.read-more-btn:hover i,
+a.read-more-btn:hover i,
+.btn:hover i.fa-arrow-right,
+.footer-link:hover i {
+  transform: translateX(6px);
+  color: var(--secondary) !important;
+}
+
+/* Floating Action / Back to Top Button Polish */
+#backToTopBtn {
+  transition: all 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 6px 20px rgba(30, 86, 49, 0.25);
+}
+
+#backToTopBtn:hover {
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 12px 28px rgba(217, 119, 6, 0.45);
+  background: var(--secondary);
+}
+
+/* Inner Page Hero Bottom Wave & Glass Breadcrumb */
+.page-hero {
+  position: relative;
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(43, 122, 70, 0.35) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(217, 119, 6, 0.2) 0%, transparent 40%);
+  background-color: var(--primary-dark);
+}
+
+.page-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 26px;
+  background: var(--bg-body);
+  clip-path: ellipse(54% 100% at 50% 100%);
+  pointer-events: none;
+}
+
+[data-theme="dark"] .page-hero::after {
+  background: var(--bg-body);
+}
+
+.breadcrumbs {
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-full);
+  padding: 0.4rem 1.15rem;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Section Separator Ribbon */
+.section-separator-line {
+  position: relative;
+  height: 1px;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent 0%, rgba(43, 122, 70, 0.25) 30%, rgba(217, 119, 6, 0.45) 50%, rgba(43, 122, 70, 0.25) 70%, transparent 100%);
+}
+
+.section-separator-line::after {
+  content: '\f6d1';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg-body);
+  padding: 0 0.8rem;
+  color: var(--secondary);
+  font-size: 0.95rem;
+  border-radius: 9999px;
+}
+
+/* Accordion Item Overrides (keep clean collapse without extreme lift) */
+.accordion-item {
+  transform: none !important;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+.accordion-item:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+.accordion-item::before {
+  display: none !important;
+}
+
+/* ==========================================================================
+   ADVANCED MOTION DESIGN & MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* 1. Award-Winning Button Hover Lift, Glow & Spring Dynamics */
+.btn {
+  position: relative;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.25s ease,
+              border-color 0.25s ease,
+              color 0.25s ease !important;
+  will-change: transform, box-shadow;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 0.1s;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 14px 28px -6px rgba(30, 86, 49, 0.45), 0 0 16px 2px rgba(43, 122, 70, 0.3) !important;
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 14px 28px -6px rgba(217, 119, 6, 0.45), 0 0 16px 2px rgba(245, 158, 11, 0.3) !important;
+}
+
+.btn-outline:hover {
+  box-shadow: 0 10px 22px -4px rgba(30, 86, 49, 0.28) !important;
+}
+
+.btn-outline-white:hover {
+  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.35) !important;
+}
+
+/* 2. Sliding Arrow Icons on Button & Link Hover */
+.btn i.fa-arrow-right,
+.btn i.fa-chevron-right,
+.read-more-btn i,
+a.read-more-btn i,
+.dropdown-link i.fa-arrow-right {
+  display: inline-block;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease !important;
+}
+
+.btn:hover i.fa-arrow-right,
+.btn:hover i.fa-chevron-right,
+.read-more-btn:hover i,
+a.read-more-btn:hover i,
+.dropdown-link:hover i.fa-arrow-right {
+  transform: translateX(6px) !important;
+  color: var(--secondary) !important;
+}
+
+/* 3. Dropdown Menu Silk Blur, Spring Scale & Staggered Items */
+.dropdown-menu {
+  transform-origin: top center;
+  transform: translateY(10px) scale(0.97) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.25s !important;
+  will-change: transform, opacity;
+}
+
+.nav-item:hover > .dropdown-menu {
+  transform: translateY(0) scale(1) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.dropdown-link {
+  position: relative;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.dropdown-link:hover {
+  transform: translateX(4px);
+  color: var(--secondary) !important;
+  background: var(--primary-subtle) !important;
+}
+
+/* 4. Mobile Navigation Drawer Slide-In & Staggered Link Reveals */
+.mobile-nav-drawer {
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.mobile-nav-item {
+  opacity: 0;
+  transform: translateX(18px);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+[dir="rtl"] .mobile-nav-item {
+  transform: translateX(-18px);
+}
+
+.mobile-nav-drawer.active .mobile-nav-item {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mobile-nav-drawer.active .mobile-nav-item:nth-child(1) { transition-delay: 0.06s; }
+.mobile-nav-drawer.active .mobile-nav-item:nth-child(2) { transition-delay: 0.10s; }
+.mobile-nav-drawer.active .mobile-nav-item:nth-child(3) { transition-delay: 0.14s; }
+.mobile-nav-drawer.active .mobile-nav-item:nth-child(4) { transition-delay: 0.18s; }
+.mobile-nav-drawer.active .mobile-nav-item:nth-child(5) { transition-delay: 0.22s; }
+.mobile-nav-drawer.active .mobile-nav-item:nth-child(6) { transition-delay: 0.26s; }
+.mobile-nav-drawer.active .mobile-nav-item:nth-child(7) { transition-delay: 0.30s; }
+.mobile-nav-drawer.active .mobile-nav-item:nth-child(8) { transition-delay: 0.34s; }
+
+/* 5. Editorial Typography Split-Word Reveals */
+.split-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  margin-right: 0.26em;
+  line-height: 1.25;
+}
+
+.split-word-inner {
+  display: inline-block;
+  transform: translateY(115%);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.6s ease;
+  will-change: transform, opacity;
+}
+
+.is-revealed .split-word-inner,
+.split-word-mask.is-revealed .split-word-inner,
+.page-loaded .hero-slide.active .split-word-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 6. Stunning Image Animations: Zoom, Sheen Sweep & Grayscale-to-Color */
+.product-thumb-wrap,
+.blog-thumb-wrap,
+.service-thumb-wrap,
+.facility-tour-card,
+.feed-card-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-thumb-wrap img,
+.blog-thumb-wrap img,
+.service-thumb-wrap img,
+.facility-tour-card img,
+.feed-card-thumb img {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.45s ease !important;
+  will-change: transform;
+}
+
+.product-card:hover .product-thumb-wrap img,
+.blog-card:hover .blog-thumb-wrap img,
+.service-card:hover .service-thumb-wrap img,
+.facility-tour-card:hover img,
+.feed-card-thumb:hover img {
+  transform: scale(1.08);
+}
+
+/* Sheen reflection sweep on image hover */
+.product-thumb-wrap::after,
+.blog-thumb-wrap::after,
+.service-thumb-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 100%
+  );
+  transform: skewX(-22deg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.product-card:hover .product-thumb-wrap::after,
+.blog-card:hover .blog-thumb-wrap::after,
+.service-card:hover .service-thumb-wrap::after {
+  opacity: 1;
+  animation: imgSheenSweep 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes imgSheenSweep {
+  0% { left: -100%; }
+  100% { left: 160%; }
+}
+
+/* Partner & Certification Logos Grayscale-to-Color Transition */
+.partner-logo,
+.cert-badge-img,
+.brand-logo-item img,
+.client-logo {
+  filter: grayscale(100%) opacity(0.68);
+  transition: filter 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: filter, transform;
+}
+
+.partner-logo:hover,
+.cert-badge-img:hover,
+.brand-logo-item:hover img,
+.client-logo:hover {
+  filter: grayscale(0%) opacity(1);
+  transform: translateY(-3px) scale(1.06);
+}
+
+/* 7. Sticky Navbar - Permanently Fixed with Smooth Glass Transition */
+.site-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  transition: background-color 0.3s ease,
+              backdrop-filter 0.3s ease,
+              -webkit-backdrop-filter 0.3s ease,
+              box-shadow 0.3s ease,
+              border-color 0.3s ease,
+              padding 0.3s ease !important;
+}
+
+.site-header.is-sticky {
+  animation: none !important;
+}
+
+/* Accessibility: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .reveal,
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-zoom,
+  .split-word-inner,
+  .mobile-nav-item {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
