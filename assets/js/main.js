@@ -941,7 +941,7 @@
         category: "Peak Lactation",
         categoryKey: "Lactation",
         badgeClass: "badge-success",
-        image: "assets/images/products/bio-bypass-fat.jpg",
+        image: "assets/images/blog/dairy-energy-partitioning.jpg",
         date: "Jun 30, 2026",
         readTime: "8 min read",
         excerpt: "How propionate precursors and rumen-inert bypass fats prevent severe body condition loss in 45-kg daily peak lactation cows.",
