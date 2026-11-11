@@ -220,55 +220,150 @@
         <button class="btn btn-sm btn-outline stage-filter-tab" data-stage="lactation"><i class="fa-solid fa-droplet"></i> Peak Lactation</button>
       </div>
 
-      <div class="table-responsive dashboard-card reveal-up" style="padding: 0; overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table class="admin-table">
-          <thead>
-            <tr>
-              <th style="padding: 1.25rem;">Livestock Lifecycle Stage</th>
-              <th>Target DMI (% Body Wt)</th>
-              <th>Recommended Concentrate</th>
-              <th>Forage / Silage Ratio</th>
-              <th>Key Mineral / Supplement Additive</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Calf Nursery (Day 1 - Weaning)</strong></td>
-              <td>1.8% - 2.2%</td>
-              <td>Calf Starter Growth Pellets (Ad libitum up to 2 kg)</td>
-              <td>Clean alfalfa / grass hay from wk 3</td>
-              <td><span class="badge badge-success">BoviStarter Probiotics</span></td>
-            </tr>
-            <tr>
-              <td><strong>Breeding Heifers (12-14 Months)</strong></td>
-              <td>2.4% - 2.6%</td>
-              <td>2.0 - 3.0 kg Growth Developer</td>
-              <td>70% Forage / 30% Concentrate</td>
-              <td><span class="badge badge-secondary">BoviMax Chelated Trace Pack</span></td>
-            </tr>
-            <tr>
-              <td><strong>Close-Up Dry Cows (Day -21 to 0)</strong></td>
-              <td>1.8% - 2.0%</td>
-              <td>3.0 - 4.0 kg Transition Guard</td>
-              <td>High low-potassium straw / corn silage</td>
-              <td><span class="badge badge-primary">Anionic Salts (-120 mEq DCAD)</span></td>
-            </tr>
-            <tr>
-              <td><strong>Fresh Cows (Day 1 to 30)</strong></td>
-              <td>3.0% - 3.5%</td>
-              <td>8.0 - 10.0 kg Ultra-Lact Pro</td>
-              <td>50% High-quality forage / 50% TMR</td>
-              <td><span class="badge badge-warning">RumenSafe Bolus &amp; Yeast</span></td>
-            </tr>
-            <tr>
-              <td><strong>Peak Lactation (Day 30 to 120)</strong></td>
-              <td>3.8% - 4.2%</td>
-              <td>12.0 - 15.0 kg Ultra-Lact Pro 22%</td>
-              <td>45% Forage / 55% Concentrates</td>
-              <td><span class="badge badge-danger">99% Bypass Fat (300g/day)</span></td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Feeding Table Card Container -->
+      <div class="feeding-table-card reveal-up">
+        <!-- Table Toolbar -->
+        <div class="feeding-table-toolbar">
+          <div class="d-flex align-center gap-2">
+            <span class="badge badge-primary"><i class="fa-solid fa-clipboard-check"></i> Standardized Formulation</span>
+            <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-heading);">NRC 2026 Dairy Feed Guidelines</span>
+          </div>
+          <div class="d-none d-md-flex align-center gap-3">
+            <span style="font-size: 0.82rem; color: var(--text-muted);"><i class="fa-solid fa-circle-info" style="color: var(--secondary);"></i> Calibrated for 650kg adult Holstein-Friesian herds</span>
+          </div>
+        </div>
+
+        <div class="feeding-table-wrap">
+          <table class="feeding-table admin-table">
+            <thead>
+              <tr>
+                <th style="padding-left: 1.6rem;">Livestock Lifecycle Stage</th>
+                <th>Target DMI (% Body Wt)</th>
+                <th>Recommended Concentrate</th>
+                <th>Forage / Silage Ratio</th>
+                <th style="padding-right: 1.6rem;">Key Mineral / Supplement Additive</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding-left: 1.6rem;">
+                  <div class="stage-cell">
+                    <div class="stage-icon calf"><i class="fa-solid fa-baby"></i></div>
+                    <div>
+                      <span class="stage-title">Calf Nursery</span>
+                      <span class="stage-sub">Day 1 to Weaning (0–8 Wks)</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="dmi-badge">1.8% – 2.2%</span></td>
+                <td>
+                  <span class="feed-name">Calf Starter Pellets</span>
+                  <span class="feed-dosage">Ad libitum up to 2.0 kg/day</span>
+                </td>
+                <td>
+                  <span class="ratio-badge"><i class="fa-solid fa-wheat-awn"></i> Clean alfalfa / grass hay (Wk 3+)</span>
+                </td>
+                <td style="padding-right: 1.6rem;">
+                  <span class="badge badge-success"><i class="fa-solid fa-shield-halved"></i> BoviStarter Probiotics</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-left: 1.6rem;">
+                  <div class="stage-cell">
+                    <div class="stage-icon heifer"><i class="fa-solid fa-seedling"></i></div>
+                    <div>
+                      <span class="stage-title">Breeding Heifers</span>
+                      <span class="stage-sub">12 to 14 Months Pre-Breeding</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="dmi-badge">2.4% – 2.6%</span></td>
+                <td>
+                  <span class="feed-name">Growth Developer 16%</span>
+                  <span class="feed-dosage">2.0 – 3.0 kg/day balanced grain</span>
+                </td>
+                <td>
+                  <span class="ratio-badge"><i class="fa-solid fa-chart-pie"></i> 70% Forage / 30% Concentrate</span>
+                </td>
+                <td style="padding-right: 1.6rem;">
+                  <span class="badge badge-secondary"><i class="fa-solid fa-gem"></i> BoviMax Chelated Trace</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-left: 1.6rem;">
+                  <div class="stage-cell">
+                    <div class="stage-icon dry"><i class="fa-solid fa-hourglass-half"></i></div>
+                    <div>
+                      <span class="stage-title">Close-Up Dry Cows</span>
+                      <span class="stage-sub">Day -21 to Calving Transition</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="dmi-badge">1.8% – 2.0%</span></td>
+                <td>
+                  <span class="feed-name">Transition Guard 18%</span>
+                  <span class="feed-dosage">3.0 – 4.0 kg/day controlled energy</span>
+                </td>
+                <td>
+                  <span class="ratio-badge"><i class="fa-solid fa-chart-pie"></i> Low-K wheat straw &amp; corn silage</span>
+                </td>
+                <td style="padding-right: 1.6rem;">
+                  <span class="badge badge-primary"><i class="fa-solid fa-flask"></i> Anionic Salts (-120 mEq DCAD)</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-left: 1.6rem;">
+                  <div class="stage-cell">
+                    <div class="stage-icon fresh"><i class="fa-solid fa-cow"></i></div>
+                    <div>
+                      <span class="stage-title">Fresh Cows</span>
+                      <span class="stage-sub">Day 1 to 30 Post-Calving</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="dmi-badge">3.0% – 3.5%</span></td>
+                <td>
+                  <span class="feed-name">Ultra-Lact Pro 20%</span>
+                  <span class="feed-dosage">8.0 – 10.0 kg/day stepped intake</span>
+                </td>
+                <td>
+                  <span class="ratio-badge"><i class="fa-solid fa-chart-pie"></i> 50% Top Forage / 50% High-Energy TMR</span>
+                </td>
+                <td style="padding-right: 1.6rem;">
+                  <span class="badge badge-warning"><i class="fa-solid fa-capsules"></i> RumenSafe Bolus &amp; Yeast</span>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding-left: 1.6rem;">
+                  <div class="stage-cell">
+                    <div class="stage-icon lactation"><i class="fa-solid fa-droplet"></i></div>
+                    <div>
+                      <span class="stage-title">Peak Lactation</span>
+                      <span class="stage-sub">Day 30 to 120 (Max Production)</span>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="dmi-badge highlight">3.8% – 4.2%</span></td>
+                <td>
+                  <span class="feed-name">Ultra-Lact Pro 22% Super</span>
+                  <span class="feed-dosage">12.0 – 15.0 kg/day peak formulation</span>
+                </td>
+                <td>
+                  <span class="ratio-badge"><i class="fa-solid fa-chart-pie"></i> 45% Silage / 55% Concentrates</span>
+                </td>
+                <td style="padding-right: 1.6rem;">
+                  <span class="badge badge-danger"><i class="fa-solid fa-bolt"></i> 99% Bypass Fat (300g/day)</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Mobile Scroll Indicator -->
+        <div class="mobile-table-hint d-md-none">
+          <i class="fa-solid fa-arrows-left-right"></i>
+          <span>Swipe table horizontally to view full nutritional breakdown</span>
+        </div>
       </div>
     </div>
   </section>

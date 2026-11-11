@@ -1851,6 +1851,195 @@ p:last-child {
 }
 
 /* ==========================================================================
+   RECOMMENDED FEEDING RATES TABLE & LIFECYCLE MATRIX
+   ========================================================================== */
+.feeding-table-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-theme="dark"] .feeding-table-card {
+  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.06);
+}
+
+.feeding-table-toolbar {
+  padding: 1.15rem 1.6rem;
+  background: var(--bg-alt);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.feeding-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.feeding-table,
+.admin-table {
+  width: 100%;
+  min-width: 860px;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+}
+
+[dir="rtl"] .feeding-table,
+[dir="rtl"] .admin-table {
+  text-align: right;
+}
+
+.feeding-table thead th,
+.admin-table thead th {
+  background: var(--bg-surface);
+  color: var(--text-heading);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 1.15rem 1.4rem;
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.feeding-table tbody td,
+.admin-table tbody td {
+  padding: 1.2rem 1.4rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: middle;
+  font-size: 0.92rem;
+  color: var(--text-body);
+  transition: background-color 0.2s ease;
+}
+
+.feeding-table tbody tr:last-child td,
+.admin-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.feeding-table tbody tr:hover td,
+.admin-table tbody tr:hover td {
+  background-color: rgba(var(--primary-rgb), 0.04);
+}
+
+[data-theme="dark"] .feeding-table tbody tr:hover td,
+[data-theme="dark"] .admin-table tbody tr:hover td {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.stage-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.stage-icon {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.stage-icon.calf { background: var(--primary-subtle); color: var(--primary); }
+.stage-icon.heifer { background: var(--secondary-subtle); color: var(--secondary); }
+.stage-icon.dry { background: var(--vet-subtle); color: var(--vet-blue); }
+.stage-icon.fresh { background: var(--earth-subtle); color: var(--earth); }
+.stage-icon.lactation { background: rgba(239, 68, 68, 0.12); color: #ef4444; }
+
+.stage-title {
+  font-weight: 700;
+  color: var(--text-heading);
+  font-size: 0.95rem;
+  display: block;
+  line-height: 1.3;
+}
+
+.stage-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.18rem;
+}
+
+.dmi-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.86rem;
+  color: var(--text-heading);
+  white-space: nowrap;
+}
+
+.dmi-badge.highlight {
+  background: var(--primary-subtle);
+  border-color: rgba(var(--primary-rgb), 0.35);
+  color: var(--primary);
+}
+
+.feed-name {
+  font-weight: 600;
+  color: var(--text-heading);
+  display: block;
+}
+
+.feed-dosage {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.ratio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  color: var(--text-body);
+}
+
+.ratio-badge i {
+  color: var(--primary);
+  font-size: 0.85rem;
+}
+
+.mobile-table-hint {
+  display: none;
+  padding: 0.75rem 1rem;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 991px) {
+  .mobile-table-hint {
+    display: flex;
+  }
+}
+
+/* ==========================================================================
    11. LIVESTOCK NUTRITION SPLIT BANNER
    ========================================================================== */
 .nutrition-split-section {

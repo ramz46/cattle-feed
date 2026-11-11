@@ -1251,20 +1251,22 @@
         tab.classList.add('btn-primary');
 
         const stage = tab.getAttribute('data-stage') || 'all';
-        const rows = document.querySelectorAll('.admin-table tbody tr');
+        const rows = document.querySelectorAll('.feeding-table tbody tr, .admin-table tbody tr');
 
         rows.forEach(row => {
           if (stage === 'all') {
             row.style.display = '';
             row.style.opacity = '1';
+            row.style.background = '';
           } else {
             const rowText = row.textContent.toLowerCase();
             if (rowText.includes(stage)) {
               row.style.display = '';
               row.style.opacity = '1';
-              row.style.background = 'var(--primary-subtle)';
+              row.style.background = 'rgba(var(--primary-rgb), 0.08)';
             } else {
               row.style.display = 'none';
+              row.style.background = '';
             }
           }
         });
