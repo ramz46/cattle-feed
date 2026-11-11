@@ -685,12 +685,50 @@
     height: 36px !important;
   }
 
-  .modal-dialog {
+  .modal-dialog:not(.checkout-modal-dialog) {
     width: 95% !important;
     max-width: 95% !important;
     padding: 1.5rem 1.25rem !important;
     margin: 1rem auto !important;
     border-radius: var(--radius-lg) !important;
+  }
+
+  /* Express Checkout Modal Responsive Padding Architecture */
+  .checkout-modal-dialog {
+    width: 95% !important;
+    max-width: 95% !important;
+    max-height: 92vh !important;
+    margin: 1rem auto !important;
+    border-radius: var(--radius-lg) !important;
+    padding: 0 !important;
+  }
+
+  .checkout-modal-header {
+    padding: 1rem 1.25rem !important;
+    gap: 0.75rem !important;
+  }
+
+  .checkout-modal-title {
+    font-size: 1.12rem !important;
+  }
+
+  .checkout-modal-body {
+    padding: 1.25rem 1.15rem !important;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  .checkout-input-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  .checkout-summary-box {
+    position: static !important;
+    padding: 1.25rem 1rem !important;
   }
 
   .quickview-grid {
@@ -837,5 +875,19 @@
   /* On ultra-compact screens, search is always accessible in the mobile drawer */
   .nav-actions .search-toggle-btn {
     display: none !important;
+  }
+
+  .checkout-modal-dialog {
+    width: 98% !important;
+    max-height: 96vh !important;
+    margin: 0.25rem auto !important;
+  }
+
+  .checkout-modal-header {
+    padding: 0.75rem 0.85rem !important;
+  }
+
+  .checkout-modal-body {
+    padding: 1rem 0.75rem !important;
   }
 }

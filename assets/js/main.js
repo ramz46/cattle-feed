@@ -227,125 +227,126 @@
       const orderTotal = subtotal + freightCost;
 
       modal.innerHTML = `
-        <div class="modal-dialog" style="max-width: 860px; padding: 0; overflow: hidden;">
-          <div style="background: var(--primary-dark); color: #ffffff; padding: 1.5rem 2rem; display: flex; align-items: center; justify-content: space-between;">
-            <div class="d-flex align-center gap-2">
-              <div style="width: 40px; height: 40px; border-radius: var(--radius-full); background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+        <div class="modal-dialog checkout-modal-dialog">
+          <div class="checkout-modal-header">
+            <div class="checkout-header-brand">
+              <div class="checkout-header-icon">
                 <i class="fa-solid fa-truck-ramp-box"></i>
               </div>
-              <div>
-                <h3 style="margin: 0; color: #ffffff; font-size: 1.35rem;">Express Farm Dispatch Checkout</h3>
-                <span style="font-size: 0.8rem; opacity: 0.85;">Direct Mill Order & Freight Schedule</span>
+              <div class="checkout-header-texts">
+                <h3 class="checkout-modal-title">Express Farm Dispatch Checkout</h3>
+                <span class="checkout-modal-subtitle">Direct Mill Order &amp; Freight Schedule</span>
               </div>
             </div>
-            <button class="action-btn" id="closeCheckoutModal" style="color: #ffffff; background: rgba(255,255,255,0.15); border: none;">
+            <button class="checkout-close-btn" id="closeCheckoutModal" aria-label="Close Checkout Modal">
               <i class="fa-solid fa-xmark"></i>
             </button>
           </div>
 
-          <div style="padding: 2rem;" id="checkoutModalBody">
-            <div class="grid-2 align-start" style="gap: 2rem;">
+          <div class="checkout-modal-body" id="checkoutModalBody">
+            <div class="checkout-grid">
               <!-- Left Form Column -->
-              <div>
-                <h4 style="margin-bottom: 1rem; font-size: 1.05rem;"><i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> 1. Farm Delivery Location</h4>
+              <div class="checkout-form-col">
+                <h4 class="checkout-section-title"><i class="fa-solid fa-location-dot"></i> 1. Farm Delivery Location</h4>
                 <form id="farmCheckoutForm" novalidate>
-                  <div style="margin-bottom: 1rem;">
-                    <label style="display:block; font-size:0.82rem; font-weight:700; margin-bottom:0.25rem;">Contact Name *</label>
-                    <input type="text" name="customerName" class="filter-search-input" placeholder="e.g. Marcus Vance" required style="padding: 0.65rem 0.9rem;" value="Marcus Vance">
+                  <div class="checkout-form-group">
+                    <label class="checkout-form-label">Contact Name *</label>
+                    <input type="text" name="customerName" class="filter-search-input" placeholder="e.g. Marcus Vance" required style="padding: 0.7rem 1rem;" value="Marcus Vance">
                   </div>
-                  <div class="grid-2" style="gap: 0.75rem; margin-bottom: 1rem;">
+                  <div class="checkout-input-row">
                     <div>
-                      <label style="display:block; font-size:0.82rem; font-weight:700; margin-bottom:0.25rem;">Farm Name</label>
-                      <input type="text" name="farmName" class="filter-search-input" placeholder="Vance Valley Holsteins" style="padding: 0.65rem 0.9rem;" value="Vance Valley Holsteins">
+                      <label class="checkout-form-label">Farm Name</label>
+                      <input type="text" name="farmName" class="filter-search-input" placeholder="Vance Valley Holsteins" style="padding: 0.7rem 1rem;" value="Vance Valley Holsteins">
                     </div>
                     <div>
-                      <label style="display:block; font-size:0.82rem; font-weight:700; margin-bottom:0.25rem;">Phone Number *</label>
-                      <input type="tel" name="phone" class="filter-search-input" placeholder="+1 (555) 000-0000" required inputmode="tel" autocomplete="tel" pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\./0-9]*$" title="Please enter a valid phone number (digits only, no letters)." style="padding: 0.65rem 0.9rem;" value="+1 (515) 390-2810">
+                      <label class="checkout-form-label">Phone Number *</label>
+                      <input type="tel" name="phone" class="filter-search-input" placeholder="+1 (555) 000-0000" required inputmode="tel" autocomplete="tel" pattern="^[0-9+\-\\s().]{7,25}$" title="Please enter a valid phone number (digits only, no letters)." style="padding: 0.7rem 1rem;" value="+1 (515) 390-2810">
                     </div>
                   </div>
-                  <div style="margin-bottom: 1rem;">
-                    <label style="display:block; font-size:0.82rem; font-weight:700; margin-bottom:0.25rem;">Farm Delivery Address / GPS *</label>
-                    <input type="text" name="deliveryAddress" class="filter-search-input" placeholder="4820 Agri-Valley Rd, Silo B" required style="padding: 0.65rem 0.9rem;" value="4820 Agri-Valley Rd, Bunker Silo #2">
+                  <div class="checkout-form-group">
+                    <label class="checkout-form-label">Farm Delivery Address / GPS *</label>
+                    <input type="text" name="deliveryAddress" class="filter-search-input" placeholder="4820 Agri-Valley Rd, Silo B" required style="padding: 0.7rem 1rem;" value="4820 Agri-Valley Rd, Bunker Silo #2">
                   </div>
                   
-                  <div style="margin-bottom: 1rem;">
-                    <label style="display:block; font-size:0.82rem; font-weight:700; margin-bottom:0.25rem;">Silo Discharge / Unloading Method</label>
-                    <select name="dischargeType" class="sort-select" style="width: 100%; padding: 0.65rem 0.9rem;">
+                  <div class="checkout-form-group">
+                    <label class="checkout-form-label">Silo Discharge / Unloading Method</label>
+                    <select name="dischargeType" class="sort-select" style="width: 100%; padding: 0.7rem 1rem;">
                       <option value="pneumatic">Pneumatic Tanker Blow-in (Direct to Silo)</option>
                       <option value="palletized">Palletized 50kg HDPE Bags (Forklift on site)</option>
                       <option value="tipping">Heavy Tipping Trailer (Commodity Bay)</option>
                     </select>
                   </div>
 
-                  <h4 style="margin: 1.5rem 0 1rem; font-size: 1.05rem;"><i class="fa-solid fa-credit-card" style="color: var(--secondary);"></i> 2. Commercial Payment Terms</h4>
-                  <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
-                    <label style="display: flex; align-items: center; gap: 0.65rem; padding: 0.75rem 1rem; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: var(--radius-md); cursor: pointer;">
+                  <h4 class="checkout-section-title payment-title" style="margin-top: 1.5rem;"><i class="fa-solid fa-credit-card"></i> 2. Commercial Payment Terms</h4>
+                  <div class="checkout-payment-group">
+                    <label class="checkout-payment-option">
                       <input type="radio" name="paymentMethod" value="net30" checked>
-                      <div style="flex-grow: 1;">
-                        <strong style="font-size: 0.9rem;">Commercial Farm Account (Net-30 Invoice)</strong>
-                        <span style="display:block; font-size:0.75rem; color: var(--text-muted);">Direct billing for certified agricultural enterprises & cooperatives.</span>
+                      <div class="payment-option-text">
+                        <strong class="payment-option-title">Commercial Farm Account (Net-30 Invoice)</strong>
+                        <span class="payment-option-desc">Direct billing for certified agricultural enterprises &amp; cooperatives.</span>
                       </div>
                     </label>
-                    <label style="display: flex; align-items: center; gap: 0.65rem; padding: 0.75rem 1rem; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: var(--radius-md); cursor: pointer;">
+                    <label class="checkout-payment-option">
                       <input type="radio" name="paymentMethod" value="creditCard">
-                      <div style="flex-grow: 1;">
-                        <strong style="font-size: 0.9rem;">Credit / Debit Card (Instant Processing)</strong>
-                        <span style="display:block; font-size:0.75rem; color: var(--text-muted);">Visa, MasterCard, Amex, Discover with 256-bit encryption.</span>
+                      <div class="payment-option-text">
+                        <strong class="payment-option-title">Credit / Debit Card (Instant Processing)</strong>
+                        <span class="payment-option-desc">Visa, MasterCard, Amex, Discover with 256-bit encryption.</span>
                       </div>
                     </label>
-                    <label style="display: flex; align-items: center; gap: 0.65rem; padding: 0.75rem 1rem; background: var(--bg-body); border: 1px solid var(--border-color); border-radius: var(--radius-md); cursor: pointer;">
+                    <label class="checkout-payment-option">
                       <input type="radio" name="paymentMethod" value="ach">
-                      <div style="flex-grow: 1;">
-                        <strong style="font-size: 0.9rem;">Bank Wire / ACH Transfer on Dispatch</strong>
-                        <span style="display:block; font-size:0.75rem; color: var(--text-muted);">Receive wiring instructions via email with automated receipt.</span>
+                      <div class="payment-option-text">
+                        <strong class="payment-option-title">Bank Wire / ACH Transfer on Dispatch</strong>
+                        <span class="payment-option-desc">Receive wiring instructions via email with automated receipt.</span>
                       </div>
                     </label>
                   </div>
 
-                  <button type="submit" class="btn btn-primary btn-lg" id="confirmOrderBtn" style="width: 100%;">
-                    <i class="fa-solid fa-check-circle"></i> Confirm Order & Schedule Dispatch ($${orderTotal.toFixed(2)})
+                  <button type="submit" class="btn btn-primary btn-lg" id="confirmOrderBtn" style="width: 100%; padding: 0.95rem 1.5rem;">
+                    <i class="fa-solid fa-check-circle"></i> Confirm Order &amp; Schedule Dispatch ($${orderTotal.toFixed(2)})
                   </button>
                 </form>
               </div>
 
               <!-- Right Order Summary Column -->
-              <div style="background: var(--bg-body); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
-                <h4 style="margin-bottom: 1rem; font-size: 1.05rem;">Order Summary (${cart.length} Products)</h4>
+              <div class="checkout-summary-box">
+                <h4 class="checkout-summary-title">Order Summary (${cart.length} Products)</h4>
                 
-                <div style="max-height: 250px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.85rem; margin-bottom: 1.25rem; padding-right: 0.25rem;">
+                <div class="checkout-cart-items-scroll">
                   ${cart.map(item => `
-                    <div style="display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; font-size: 0.88rem;">
-                      <div style="display: flex; align-items: center; gap: 0.6rem;">
-                        <img src="${item.image}" alt="${item.name}" style="width: 42px; height: 42px; border-radius: var(--radius-sm); object-fit: cover;">
+                    <div class="checkout-cart-item">
+                      <div class="checkout-cart-item-info">
+                        <img src="${item.image}" alt="${item.name}" class="checkout-cart-item-img">
                         <div>
-                          <div style="font-weight: 700; line-height: 1.2;">${item.name}</div>
-                          <span style="font-size: 0.75rem; color: var(--text-muted);">${item.quantity} × $${item.price.toFixed(2)}</span>
+                          <div class="checkout-cart-item-name" title="${item.name}">${item.name}</div>
+                          <span class="checkout-cart-item-meta">${item.quantity} × $${item.price.toFixed(2)}</span>
                         </div>
                       </div>
-                      <div style="font-weight: 800; color: var(--primary);">$${(item.price * item.quantity).toFixed(2)}</div>
+                      <div class="checkout-cart-item-price">$${(item.price * item.quantity).toFixed(2)}</div>
                     </div>
                   `).join('')}
                 </div>
 
-                <div style="border-top: 1px solid var(--border-color); padding-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; font-size: 0.9rem;">
-                  <div class="d-flex justify-between">
-                    <span style="color: var(--text-muted);">Feed Subtotal:</span>
+                <div class="checkout-totals-block">
+                  <div class="checkout-totals-row">
+                    <span class="checkout-totals-label">Feed Subtotal:</span>
                     <strong>$${subtotal.toFixed(2)}</strong>
                   </div>
-                  <div class="d-flex justify-between">
-                    <span style="color: var(--text-muted);">Freight Logistics:</span>
+                  <div class="checkout-totals-row">
+                    <span class="checkout-totals-label">Freight Logistics:</span>
                     <strong style="color: ${isFreeShipping ? 'var(--success)' : 'var(--text-main)'};">
                       ${isFreeShipping ? '<i class="fa-solid fa-circle-check"></i> FREE Farm Delivery' : `$${freightCost.toFixed(2)}`}
                     </strong>
                   </div>
-                  <div class="d-flex justify-between align-center" style="border-top: 2px solid var(--border-color); padding-top: 0.75rem; margin-top: 0.25rem; font-size: 1.2rem;">
+                  <div class="checkout-totals-row checkout-grand-total">
                     <span>Total Amount:</span>
                     <strong style="color: var(--primary);">$${orderTotal.toFixed(2)}</strong>
                   </div>
                 </div>
 
-                <div style="margin-top: 1.5rem; padding: 0.75rem 1rem; background: var(--bg-surface); border-radius: var(--radius-md); border: 1px solid var(--border-light); font-size: 0.78rem; color: var(--text-muted);">
-                  <i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> 100% NIR Quality Assured • Zero Mycotoxin Tested • 48-Hour Dispatch Guarantee.
+                <div class="checkout-security-notice">
+                  <i class="fa-solid fa-shield-halved" style="color: var(--primary); font-size: 1rem; margin-top: 0.1rem; flex-shrink: 0;"></i>
+                  <span>100% NIR Quality Assured • Zero Mycotoxin Tested • 48-Hour Dispatch Guarantee.</span>
                 </div>
               </div>
             </div>
