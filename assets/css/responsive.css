@@ -203,6 +203,25 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+
+  .blog-featured-grid {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .blog-featured-img-wrap {
+    height: 260px !important;
+    min-height: 260px !important;
+  }
+
+  .blog-featured-content {
+    padding: 2rem !important;
+  }
+
+  #blogGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
   
   .catalog-layout {
     grid-template-columns: 1fr;
@@ -444,8 +463,41 @@
     padding: 1.35rem !important;
   }
 
-  .blog-card-thumb {
+  .blog-card-thumb,
+  .blog-thumb-wrap {
     height: 200px !important;
+  }
+
+  .blog-featured-img-wrap {
+    height: 220px !important;
+    min-height: 220px !important;
+  }
+
+  .blog-featured-content {
+    padding: 1.4rem !important;
+  }
+
+  .blog-title {
+    min-height: auto !important;
+  }
+
+  .blog-excerpt {
+    min-height: auto !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .blog-filters-container {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 0.65rem !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .blog-filters-container::-webkit-scrollbar {
+    display: none;
   }
 
   /* Testimonials Single-Card Mobile Snap Slider */
