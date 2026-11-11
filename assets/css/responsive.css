@@ -434,7 +434,13 @@
   }
 
   .service-card,
-  .blog-card {
+  .blog-card,
+  .season-card {
+    padding: 0 !important;
+  }
+
+  .service-card-body,
+  .blog-content {
     padding: 1.35rem !important;
   }
 
