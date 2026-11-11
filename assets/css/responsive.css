@@ -150,6 +150,11 @@
   .grid-4 {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  #seasonalCardsGrid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 1.25rem !important;
+  }
 }
 
 /* Max Width 1080px (Tablets & Compact Laptops - Clean Hamburger Switch) */
@@ -179,6 +184,19 @@
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+
+  #seasonalCardsGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.35rem !important;
+  }
+
+  .season-title {
+    min-height: auto !important;
+  }
+
+  .season-desc {
+    min-height: auto !important;
   }
   
   .grid-3 {
@@ -247,7 +265,8 @@
   .grid-3,
   .grid-4,
   .grid-auto,
-  .article-layout-grid {
+  .article-layout-grid,
+  #seasonalCardsGrid {
     grid-template-columns: 1fr !important;
     gap: 1.35rem !important;
   }

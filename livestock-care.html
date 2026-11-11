@@ -104,63 +104,99 @@
 
       <div class="grid-4" id="seasonalCardsGrid">
         <!-- Spring -->
-        <div class="feature-box reveal-up delay-100 season-card" data-season="spring">
-          <img src="https://images.unsplash.com/photo-1573731399281-6540bc50ed91?auto=format&fit=crop&w=600&q=80" alt="Spring Pasture Grazing" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
-          <div class="feature-icon-wrap" style="background: var(--primary-subtle); color: var(--primary);">
-            <i class="fa-solid fa-seedling"></i>
+        <div class="season-card reveal-up delay-100" data-season="spring">
+          <div class="season-card-thumb">
+            <img src="https://images.unsplash.com/photo-1573731399281-6540bc50ed91?auto=format&fit=crop&w=600&q=80" alt="Spring Pasture Grazing" loading="lazy">
+            <span class="season-badge" style="background: rgba(16, 185, 129, 0.95); color: #ffffff;"><i class="fa-solid fa-seedling"></i> Spring Pasture</span>
           </div>
-          <h4>Spring Pasture &amp; Grass Tetany</h4>
-          <p>Lush early spring grasses are rich in potassium and nitrogen but critically low in magnesium and crude fiber.</p>
-          <ul style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.75rem;">
-            <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Provide high-magnesium mineral blocks.</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Buffer lush pasture with long-stem dry hay.</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> Watch for frothy pasture bloat.</li>
-          </ul>
+          <div class="season-card-body">
+            <div class="season-card-header">
+              <div class="season-icon-pill" style="background: var(--primary-subtle); color: var(--primary);">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <h4 class="season-title">Spring Pasture &amp; Grass Tetany</h4>
+            </div>
+            <p class="season-desc">Lush early spring grasses are rich in potassium and nitrogen but critically low in magnesium and crude fiber.</p>
+            <div class="season-protocols-divider"></div>
+            <div class="season-protocols-heading">Key Protocols</div>
+            <ul class="season-protocol-list">
+              <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <span>Provide high-magnesium mineral blocks.</span></li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <span>Buffer lush pasture with long-stem dry hay.</span></li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--primary);"></i> <span>Watch for frothy pasture bloat.</span></li>
+            </ul>
+          </div>
         </div>
 
         <!-- Summer -->
-        <div class="feature-box reveal-up delay-200 season-card" data-season="summer">
-          <img src="https://images.unsplash.com/photo-1657666314983-597a7e4e9fd5?auto=format&fit=crop&w=600&q=80" alt="Summer Barn Ventilation" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
-          <div class="feature-icon-wrap" style="background: var(--secondary-subtle); color: var(--secondary);">
-            <i class="fa-solid fa-sun"></i>
+        <div class="season-card reveal-up delay-200" data-season="summer">
+          <div class="season-card-thumb">
+            <img src="https://images.unsplash.com/photo-1657666314983-597a7e4e9fd5?auto=format&fit=crop&w=600&q=80" alt="Summer Barn Ventilation" loading="lazy">
+            <span class="season-badge" style="background: rgba(245, 158, 11, 0.95); color: #ffffff;"><i class="fa-solid fa-sun"></i> Summer Heat</span>
           </div>
-          <h4>Summer Heat Stress Mitigation</h4>
-          <p>When the Temperature-Humidity Index (THI) exceeds 68, cows drop dry matter intake by up to 25%, risking severe acidosis.</p>
-          <ul style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.75rem;">
-            <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Shift 60% of feeding to evening/night.</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Boost dietary potassium (1.5%) &amp; sodium.</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> Feed bypass fat to maintain energy density.</li>
-          </ul>
+          <div class="season-card-body">
+            <div class="season-card-header">
+              <div class="season-icon-pill" style="background: var(--secondary-subtle); color: var(--secondary);">
+                <i class="fa-solid fa-sun"></i>
+              </div>
+              <h4 class="season-title">Summer Heat Stress Mitigation</h4>
+            </div>
+            <p class="season-desc">When the Temperature-Humidity Index (THI) exceeds 68, cows drop dry matter intake by up to 25%, risking severe acidosis.</p>
+            <div class="season-protocols-divider"></div>
+            <div class="season-protocols-heading">Key Protocols</div>
+            <ul class="season-protocol-list">
+              <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> <span>Shift 60% of feeding to evening/night.</span></li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> <span>Boost dietary potassium (1.5%) &amp; sodium.</span></li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--secondary);"></i> <span>Feed bypass fat to maintain energy density.</span></li>
+            </ul>
+          </div>
         </div>
 
         <!-- Autumn -->
-        <div class="feature-box reveal-up delay-300 season-card" data-season="autumn">
-          <img src="assets/images/blog/corn-silage-fermentation.jpg" alt="Autumn Silage Fermentation" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
-          <div class="feature-icon-wrap" style="background: var(--earth-subtle); color: var(--earth);">
-            <i class="fa-solid fa-leaf"></i>
+        <div class="season-card reveal-up delay-300" data-season="autumn">
+          <div class="season-card-thumb">
+            <img src="assets/images/blog/corn-silage-fermentation.jpg" alt="Autumn Silage Fermentation" loading="lazy">
+            <span class="season-badge" style="background: rgba(217, 119, 6, 0.95); color: #ffffff;"><i class="fa-solid fa-leaf"></i> Autumn Silage</span>
           </div>
-          <h4>Autumn Silage &amp; Weaning</h4>
-          <p>Transitioning from fresh grazing to fermented silage requires strict bunker compaction to prevent aerobic spoilage.</p>
-          <ul style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.75rem;">
-            <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> Inoculate corn silage with homofermentative strains.</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> Administer pre-weaning calf respiratory vaccines.</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> Step up booster rations for replacement heifers.</li>
-          </ul>
+          <div class="season-card-body">
+            <div class="season-card-header">
+              <div class="season-icon-pill" style="background: var(--earth-subtle); color: var(--earth);">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <h4 class="season-title">Autumn Silage &amp; Weaning</h4>
+            </div>
+            <p class="season-desc">Transitioning from fresh grazing to fermented silage requires strict bunker compaction to prevent aerobic spoilage.</p>
+            <div class="season-protocols-divider"></div>
+            <div class="season-protocols-heading">Key Protocols</div>
+            <ul class="season-protocol-list">
+              <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> <span>Inoculate corn silage with homofermentative strains.</span></li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> <span>Administer pre-weaning calf respiratory vaccines.</span></li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--earth);"></i> <span>Step up booster rations for replacement heifers.</span></li>
+            </ul>
+          </div>
         </div>
 
         <!-- Winter -->
-        <div class="feature-box reveal-up delay-400 season-card" data-season="winter">
-          <img src="https://images.unsplash.com/photo-1758456317292-7d39f0a663ba?auto=format&fit=crop&w=600&q=80" alt="Winter Cattle Energy" style="width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1rem;">
-          <div class="feature-icon-wrap" style="background: var(--vet-subtle); color: var(--vet-blue);">
-            <i class="fa-solid fa-snowflake"></i>
+        <div class="season-card reveal-up delay-400" data-season="winter">
+          <div class="season-card-thumb">
+            <img src="assets/images/products/winter-cattle-nutrition.jpg" alt="Winter Cattle Energy" loading="lazy">
+            <span class="season-badge" style="background: rgba(59, 130, 246, 0.95); color: #ffffff;"><i class="fa-solid fa-snowflake"></i> Winter Energy</span>
           </div>
-          <h4>Winter Energy Maintenance</h4>
-          <p>For every degree below lower critical temperature (32°F / 0°C), a cow requires a 1% increase in Total Digestible Nutrients (TDN).</p>
-          <ul style="font-size: 0.85rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.4rem; margin-top: 0.75rem;">
-            <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> Increase concentrate energy by 10-15%.</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> Ensure continuous warm, non-freezing water.</li>
-            <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> Maintain dry bedding to protect udder health.</li>
-          </ul>
+          <div class="season-card-body">
+            <div class="season-card-header">
+              <div class="season-icon-pill" style="background: var(--vet-subtle); color: var(--vet-blue);">
+                <i class="fa-solid fa-snowflake"></i>
+              </div>
+              <h4 class="season-title">Winter Energy Maintenance</h4>
+            </div>
+            <p class="season-desc">For every degree below lower critical temperature (32°F / 0°C), a cow requires a 1% increase in Total Digestible Nutrients (TDN).</p>
+            <div class="season-protocols-divider"></div>
+            <div class="season-protocols-heading">Key Protocols</div>
+            <ul class="season-protocol-list">
+              <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> <span>Increase concentrate energy by 10-15%.</span></li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> <span>Ensure continuous warm, non-freezing water.</span></li>
+              <li><i class="fa-solid fa-circle-check" style="color: var(--vet-blue);"></i> <span>Maintain dry bedding to protect udder health.</span></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
