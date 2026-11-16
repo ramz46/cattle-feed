@@ -180,6 +180,16 @@
   .nav-actions .btn {
     display: none !important;
   }
+
+  /* Hide Search, Cart, and RTL/LTR buttons in top navbar on mobile and inspect mode */
+  .nav-actions .search-toggle-btn,
+  .nav-actions .cart-toggle-btn,
+  .nav-actions .rtl-toggle-btn,
+  header .nav-actions .search-toggle-btn,
+  header .nav-actions .cart-toggle-btn,
+  header .nav-actions .rtl-toggle-btn {
+    display: none !important;
+  }
   
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
