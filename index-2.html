@@ -229,85 +229,147 @@
         <p class="section-desc">Estimate daily Dry Matter Intake (DMI), concentrate requirements, fresh forage allocation, and mineral intake in real time.</p>
       </div>
 
-      <div class="grid-2 align-center">
-        <!-- Form Controls -->
-        <div class="dashboard-card reveal-left">
-          <h4 style="margin-bottom: 1.5rem;"><i class="fa-solid fa-sliders" style="color: var(--primary);"></i> Herd Parameters</h4>
-          
-          <form id="rationCalculatorForm">
-            <div style="margin-bottom: 1.25rem;">
-              <label style="display: block; font-weight: 700; margin-bottom: 0.4rem; font-size: 0.9rem;">Animal Production Stage:</label>
-              <select id="calcAnimalType" class="sort-select" style="width: 100%; padding: 0.75rem 1rem;">
-                <option value="lactating">High-Producing Lactating Dairy Cow</option>
-                <option value="dry">Dry / Pregnant Transition Cow</option>
-                <option value="calf">Growing Heifer / Calf</option>
-                <option value="beef">Beef Steer / Feedlot Cattle</option>
-              </select>
-            </div>
-
-            <div style="margin-bottom: 1.5rem;">
-              <div class="d-flex justify-between align-center" style="margin-bottom: 0.4rem;">
-                <label style="font-weight: 700; font-size: 0.9rem;">Average Body Weight (kg):</label>
-                <span id="calcWeightVal" style="font-weight: 800; color: var(--primary);">550 kg</span>
+      <div class="calculator-grid">
+        <!-- Form Controls (Herd Parameters) -->
+        <div class="calculator-card calculator-parameters-card reveal-left">
+          <div>
+            <div class="calc-card-header">
+              <div class="calc-card-title-group">
+                <div class="calc-card-icon">
+                  <i class="fa-solid fa-sliders"></i>
+                </div>
+                <div>
+                  <h3 class="calc-card-title">Herd Parameters</h3>
+                  <span class="calc-card-subtitle">NRC Scientific Bovine Formulation</span>
+                </div>
               </div>
-              <input type="range" id="calcBodyWeight" min="150" max="850" step="10" value="550" class="price-range-input">
+              <span class="badge badge-primary"><i class="fa-solid fa-cow"></i> Live Inputs</span>
             </div>
-
-            <div style="margin-bottom: 1.5rem;">
-              <div class="d-flex justify-between align-center" style="margin-bottom: 0.4rem;">
-                <label style="font-weight: 700; font-size: 0.9rem;">Target Daily Milk Yield (Liters/day):</label>
-                <span id="calcMilkVal" style="font-weight: 800; color: var(--secondary);">22 Liters/day</span>
+            
+            <form id="rationCalculatorForm" class="calc-form">
+              <div class="calc-form-group">
+                <div class="calc-param-header">
+                  <label for="calcAnimalType" class="calc-label">
+                    <i class="fa-solid fa-layer-group"></i> Animal Production Stage
+                  </label>
+                </div>
+                <div class="calc-select-wrapper">
+                  <select id="calcAnimalType" class="calc-select" aria-label="Animal Production Stage">
+                    <option value="lactating">High-Producing Lactating Dairy Cow</option>
+                    <option value="dry">Dry / Pregnant Transition Cow</option>
+                    <option value="calf">Growing Heifer / Calf</option>
+                    <option value="beef">Beef Steer / Feedlot Cattle</option>
+                  </select>
+                  <i class="fa-solid fa-chevron-down calc-select-arrow"></i>
+                </div>
               </div>
-              <input type="range" id="calcMilkYield" min="0" max="50" step="1" value="22" class="price-range-input">
-            </div>
 
-            <p style="font-size: 0.8rem; color: var(--text-light); margin: 0;">
-              * Calculations adhere to NRC (National Research Council) bovine nutritional standards.
-            </p>
-          </form>
+              <div class="calc-form-group">
+                <div class="calc-param-header">
+                  <label for="calcBodyWeight" class="calc-label">
+                    <i class="fa-solid fa-weight-hanging"></i> Average Body Weight
+                  </label>
+                  <span id="calcWeightVal" class="calc-badge calc-badge-primary">550 kg</span>
+                </div>
+                <div class="calc-range-wrapper">
+                  <input type="range" id="calcBodyWeight" min="150" max="850" step="10" value="550" class="calc-range-input calc-range-weight" aria-label="Average Body Weight (kg)">
+                  <div class="calc-range-scale">
+                    <span>150 kg</span>
+                    <span class="scale-mid">500 kg (Typical)</span>
+                    <span>850 kg</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="calc-form-group">
+                <div class="calc-param-header">
+                  <label for="calcMilkYield" class="calc-label">
+                    <i class="fa-solid fa-droplet"></i> Target Daily Milk Yield
+                  </label>
+                  <span id="calcMilkVal" class="calc-badge calc-badge-secondary">22 Liters/day</span>
+                </div>
+                <div class="calc-range-wrapper">
+                  <input type="range" id="calcMilkYield" min="0" max="50" step="1" value="22" class="calc-range-input calc-range-milk" aria-label="Target Daily Milk Yield (Liters/day)">
+                  <div class="calc-range-scale">
+                    <span>0 L (Dry / Beef)</span>
+                    <span class="scale-mid">25 L</span>
+                    <span>50 L (Peak)</span>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="calc-compliance-note">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Calculations adhere strictly to <strong>NRC (National Research Council)</strong> dairy &amp; beef nutritional standards.</span>
+          </div>
         </div>
 
-        <!-- Calculated Output Cards -->
-        <div class="reveal-right">
-          <div style="background: var(--bg-surface); padding: 2rem; border-radius: var(--radius-xl); border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
-            <h4 style="margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between;">
-              <span>Recommended Daily Ration</span>
-              <span class="badge badge-success">Target Balanced</span>
-            </h4>
+        <!-- Calculated Output Cards (Recommended Daily Ration) -->
+        <div class="calculator-card calculator-results-card reveal-right">
+          <div>
+            <div class="calc-card-header">
+              <div class="calc-card-title-group">
+                <div class="calc-card-icon calc-icon-results">
+                  <i class="fa-solid fa-chart-pie"></i>
+                </div>
+                <div>
+                  <h3 class="calc-card-title">Recommended Daily Ration</h3>
+                  <span class="calc-card-subtitle">Estimated Dry Matter &amp; Nutrient Allocation</span>
+                </div>
+              </div>
+              <span class="badge badge-success"><i class="fa-solid fa-circle-check"></i> Target Balanced</span>
+            </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.5rem;">
-              <div style="background: var(--bg-body); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Est. Dry Matter Intake</div>
-                <div id="calcDMI" style="font-size: 1.6rem; font-weight: 800; color: var(--primary); font-family: var(--font-heading);">20.3 kg</div>
-                <div style="font-size: 0.75rem; color: var(--text-light);">DMI / cow / day</div>
-                <div class="progress-track" style="margin-top: 0.5rem; height: 4px;">
+            <div class="calc-results-grid">
+              <div class="calc-metric-card">
+                <div>
+                  <div class="calc-metric-title">Est. Dry Matter Intake</div>
+                  <div id="calcDMI" class="calc-metric-val" style="color: var(--primary);">20.3 kg</div>
+                  <div class="calc-metric-desc">DMI / cow / day</div>
+                </div>
+                <div class="progress-track" style="margin-top: 0.65rem; height: 5px;">
                   <div class="progress-fill animated-bar-fill" id="calcDmiBar" style="width: 68%;"></div>
                 </div>
               </div>
 
-              <div style="background: var(--bg-body); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Crude Protein Required</div>
-                <div id="calcCP" style="font-size: 1.6rem; font-weight: 800; color: var(--secondary); font-family: var(--font-heading);">2,530 g</div>
-                <div style="font-size: 0.75rem; color: var(--text-light);">Metabolizable protein</div>
+              <div class="calc-metric-card">
+                <div>
+                  <div class="calc-metric-title">Crude Protein Required</div>
+                  <div id="calcCP" class="calc-metric-val" style="color: var(--secondary);">2,530 g</div>
+                  <div class="calc-metric-desc">Metabolizable protein</div>
+                </div>
+                <div class="progress-track" style="margin-top: 0.65rem; height: 5px; opacity: 0.4;">
+                  <div class="progress-fill" style="width: 82%; background: var(--secondary);"></div>
+                </div>
               </div>
 
-              <div style="background: var(--bg-body); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Concentrate Pellet</div>
-                <div id="calcConcentrate" style="font-size: 1.6rem; font-weight: 800; color: var(--primary-dark); font-family: var(--font-heading);">11.0 kg</div>
-                <div style="font-size: 0.75rem; color: var(--text-light);">BoviCure Ultra-Lact</div>
-                <div class="progress-track" style="margin-top: 0.5rem; height: 4px;">
+              <div class="calc-metric-card">
+                <div>
+                  <div class="calc-metric-title">Concentrate Pellet</div>
+                  <div id="calcConcentrate" class="calc-metric-val" style="color: var(--primary-dark);">11.0 kg</div>
+                  <div class="calc-metric-desc">BoviCure Ultra-Lact</div>
+                </div>
+                <div class="progress-track" style="margin-top: 0.65rem; height: 5px;">
                   <div class="progress-fill animated-bar-fill" id="calcConcentrateBar" style="width: 55%; background: var(--secondary);"></div>
                 </div>
               </div>
 
-              <div style="background: var(--bg-body); padding: 1.1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
-                <div style="font-size: 0.78rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Chelated Minerals</div>
-                <div id="calcMineral" style="font-size: 1.6rem; font-weight: 800; color: var(--vet-blue); font-family: var(--font-heading);">93 g</div>
-                <div style="font-size: 0.75rem; color: var(--text-light);">BoviMax Chelated</div>
+              <div class="calc-metric-card">
+                <div>
+                  <div class="calc-metric-title">Chelated Minerals</div>
+                  <div id="calcMineral" class="calc-metric-val" style="color: var(--vet-blue);">93 g</div>
+                  <div class="calc-metric-desc">BoviMax Chelated</div>
+                </div>
+                <div class="progress-track" style="margin-top: 0.65rem; height: 5px; opacity: 0.4;">
+                  <div class="progress-fill" style="width: 60%; background: var(--vet-blue);"></div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <a href="contact.html?type=custom-ration" class="btn btn-primary" style="width: 100%;">
+          <a href="contact.html?type=custom-ration" class="btn btn-primary btn-lg" style="width: 100%;">
               <i class="fa-solid fa-envelope-open-text"></i> Order Custom Formulated TMR Mix
             </a>
           </div>

@@ -214,6 +214,11 @@
     min-height: 260px !important;
   }
 
+  .calculator-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+
   .blog-featured-content {
     padding: 2rem !important;
   }
@@ -731,6 +736,10 @@
     padding: 1.25rem 1rem !important;
   }
 
+  .calculator-card {
+    padding: 1.5rem 1.25rem !important;
+  }
+
   .quickview-grid {
     grid-template-columns: 1fr !important;
     gap: 1.25rem !important;
@@ -889,5 +898,33 @@
 
   .checkout-modal-body {
     padding: 1rem 0.75rem !important;
+  }
+
+  .calculator-card {
+    padding: 1.15rem 0.85rem !important;
+  }
+
+  .calc-card-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  .calc-param-header {
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+  }
+
+  .calc-results-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.65rem !important;
+  }
+
+  .calc-metric-card {
+    padding: 0.75rem !important;
+  }
+
+  .calc-metric-val {
+    font-size: 1.35rem !important;
   }
 }
