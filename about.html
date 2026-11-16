@@ -469,22 +469,51 @@
     </div>
   </aside>
 
-  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+  
+  <!-- Mobile Navigation Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer" aria-label="Mobile Navigation">
     <div class="mobile-drawer-header">
-      <div class="brand-text"><span class="brand-name">BoviCure<span style="color: var(--secondary);">&amp;</span>Feeds</span></div>
-      <button class="drawer-close-btn" id="closeMobileDrawer"><i class="fa-solid fa-xmark"></i></button>
+      <div class="brand-text">
+        <span class="brand-name">BoviCure<span style="color: var(--secondary);">&amp;</span>Feeds</span>
+      </div>
+      <button class="drawer-close-btn" id="closeMobileDrawer" title="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
     <div class="mobile-drawer-body">
       <ul class="mobile-nav-links">
-        <li class="mobile-nav-item"><a href="index.html" class="mobile-nav-link">Home 1</a></li>
-        <li class="mobile-nav-item"><a href="index-2.html" class="mobile-nav-link">Home 2</a></li>
-        <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link active">About Us</a></li>
-        <li class="mobile-nav-item"><a href="products.html" class="mobile-nav-link">Products</a></li>
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link mobile-submenu-trigger">Home <i class="fa-solid fa-chevron-down" style="font-size:0.8rem;"></i></a>
+          <div class="mobile-submenu">
+            <a href="index.html" class="mobile-sublink">Home 1 – Agricultural Landing</a>
+            <a href="index-2.html" class="mobile-sublink">Home 2 – Livestock &amp; Vet Niche</a>
+          </div>
+        </li>
+        <li class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About Us</a></li>
+        <li class="mobile-nav-item">
+          <a href="#" class="mobile-nav-link mobile-submenu-trigger">Products <i class="fa-solid fa-chevron-down" style="font-size:0.8rem;"></i></a>
+          <div class="mobile-submenu">
+            <a href="products.html" class="mobile-sublink">All Products</a>
+            <a href="products.html?category=dairy-feed" class="mobile-sublink">High-Yield Dairy Feed</a>
+            <a href="products.html?category=mineral-mixtures" class="mobile-sublink">Chelated Mineral Mixtures</a>
+            <a href="products.html?category=veterinary-medicines" class="mobile-sublink">Veterinary Supplies</a>
+          </div>
+        </li>
         <li class="mobile-nav-item"><a href="livestock-care.html" class="mobile-nav-link">Livestock Care</a></li>
         <li class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></li>
         <li class="mobile-nav-item"><a href="blog.html" class="mobile-nav-link">Blog</a></li>
         <li class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></li>
       </ul>
+    </div>
+    <div class="mobile-drawer-footer">
+      <div class="d-flex justify-between align-center">
+        <button class="control-pill theme-toggle-btn" style="color: var(--text-main); border-color: var(--border-color);">
+          <i class="fa-solid fa-moon"></i> Toggle Dark
+        </button>
+        <button class="control-pill rtl-toggle-btn" style="color: var(--text-main); border-color: var(--border-color);">
+          <i class="fa-solid fa-globe"></i> <span class="btn-text">RTL</span>
+        </button>
+      </div>
     </div>
   </aside>
 

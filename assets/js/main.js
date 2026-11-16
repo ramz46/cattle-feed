@@ -182,12 +182,21 @@
    */
   function highlightActiveNavLink() {
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-link, .dropdown-link, .mobile-nav-link');
+    const navLinks = document.querySelectorAll('.nav-link, .dropdown-link, .mobile-nav-link, .mobile-sublink');
 
     navLinks.forEach(link => {
       const href = link.getAttribute('href');
       if (href && (href === currentPath || (currentPath === '' && href === 'index.html'))) {
         link.classList.add('active');
+
+        // If it's a mobile sublink, also activate parent trigger
+        const parentSubmenu = link.closest('.mobile-submenu');
+        if (parentSubmenu) {
+          const trigger = parentSubmenu.previousElementSibling;
+          if (trigger && trigger.classList.contains('mobile-submenu-trigger')) {
+            trigger.classList.add('active');
+          }
+        }
       }
     });
   }
