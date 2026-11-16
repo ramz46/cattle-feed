@@ -94,12 +94,12 @@
       </div>
 
       <!-- Season Filter Pills -->
-      <div class="d-flex justify-center gap-1 flex-wrap reveal-up" style="margin-bottom: 2.5rem;">
-        <button class="btn btn-sm btn-primary season-filter-tab" onclick="filterSeasons('all', this)"><i class="fa-solid fa-calendar-days"></i> All Seasons</button>
-        <button class="btn btn-sm btn-outline season-filter-tab" onclick="filterSeasons('spring', this)"><i class="fa-solid fa-seedling"></i> Spring Pasture</button>
-        <button class="btn btn-sm btn-outline season-filter-tab" onclick="filterSeasons('summer', this)"><i class="fa-solid fa-sun"></i> Summer Heat</button>
-        <button class="btn btn-sm btn-outline season-filter-tab" onclick="filterSeasons('autumn', this)"><i class="fa-solid fa-leaf"></i> Autumn Silage</button>
-        <button class="btn btn-sm btn-outline season-filter-tab" onclick="filterSeasons('winter', this)"><i class="fa-solid fa-snowflake"></i> Winter Energy</button>
+      <div class="d-flex justify-center gap-1 flex-wrap reveal-up season-filter-group" style="margin-bottom: 2.5rem;">
+        <button type="button" class="btn btn-sm btn-primary season-filter-tab active" data-season="all" onclick="filterSeasons('all', this)"><i class="fa-solid fa-calendar-days"></i> All Seasons</button>
+        <button type="button" class="btn btn-sm btn-outline season-filter-tab" data-season="spring" onclick="filterSeasons('spring', this)"><i class="fa-solid fa-seedling"></i> Spring Pasture</button>
+        <button type="button" class="btn btn-sm btn-outline season-filter-tab" data-season="summer" onclick="filterSeasons('summer', this)"><i class="fa-solid fa-sun"></i> Summer Heat</button>
+        <button type="button" class="btn btn-sm btn-outline season-filter-tab" data-season="autumn" onclick="filterSeasons('autumn', this)"><i class="fa-solid fa-leaf"></i> Autumn Silage</button>
+        <button type="button" class="btn btn-sm btn-outline season-filter-tab" data-season="winter" onclick="filterSeasons('winter', this)"><i class="fa-solid fa-snowflake"></i> Winter Energy</button>
       </div>
 
       <div class="grid-4" id="seasonalCardsGrid">

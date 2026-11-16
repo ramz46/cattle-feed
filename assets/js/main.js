@@ -1214,30 +1214,87 @@
   /**
    * 9. Livestock Care Matrix & Stage Filter Tabs
    */
+  let lastFilterTime = 0;
+  let lastFilterSeason = null;
+
+  function filterSeasonsHandler(season, btn) {
+    const normalizedSeason = (season || 'all').toLowerCase().trim();
+    const now = Date.now();
+
+    // Prevent duplicate firing if both inline onclick and addEventListener trigger
+    if (lastFilterSeason === normalizedSeason && (now - lastFilterTime) < 250) {
+      return;
+    }
+    lastFilterTime = now;
+    lastFilterSeason = normalizedSeason;
+
+    const tabs = document.querySelectorAll('.season-filter-tab');
+    
+    tabs.forEach(t => {
+      t.classList.remove('btn-primary', 'active');
+      t.classList.add('btn-outline');
+    });
+
+    let activeBtn = btn;
+    if (!activeBtn) {
+      activeBtn = Array.from(tabs).find(t => {
+        const ds = (t.getAttribute('data-season') || '').toLowerCase();
+        return ds === normalizedSeason || (normalizedSeason === 'all' && t.innerText.toLowerCase().includes('all'));
+      });
+    }
+
+    if (activeBtn) {
+      activeBtn.classList.remove('btn-outline');
+      activeBtn.classList.add('btn-primary', 'active');
+    }
+
+    const grid = document.getElementById('seasonalCardsGrid');
+    if (grid) {
+      if (normalizedSeason === 'all') {
+        grid.classList.remove('season-filtered-single');
+      } else {
+        grid.classList.add('season-filtered-single');
+      }
+    }
+
+    const cards = document.querySelectorAll('.season-card');
+    cards.forEach(card => {
+      const cardSeason = (card.getAttribute('data-season') || '').toLowerCase();
+      if (normalizedSeason === 'all' || cardSeason === normalizedSeason) {
+        card.classList.remove('is-hidden');
+        card.style.display = 'flex';
+        card.style.opacity = '1';
+        card.style.visibility = 'visible';
+        card.classList.add('is-revealed');
+      } else {
+        card.classList.add('is-hidden');
+        card.style.setProperty('display', 'none', 'important');
+      }
+    });
+
+    if (window.showToast) {
+      const seasonNames = {
+        all: 'All Seasons',
+        spring: 'Spring Pasture & Grass Tetany',
+        summer: 'Summer Heat Stress Mitigation',
+        autumn: 'Autumn Silage & Weaning',
+        winter: 'Winter Energy Maintenance'
+      };
+      window.showToast(`Displaying ${seasonNames[normalizedSeason] || normalizedSeason.toUpperCase()} Protocols`, 'info', 3000);
+    }
+  }
+
+  // Expose immediately on window so inline onclick handlers never fail
+  window.filterSeasons = filterSeasonsHandler;
+
   function initLivestockCareTabs() {
-    window.filterSeasons = function (season, btn) {
-      const tabs = document.querySelectorAll('.season-filter-tab');
-      tabs.forEach(t => {
-        t.classList.remove('btn-primary');
-        t.classList.add('btn-outline');
+    const seasonTabs = document.querySelectorAll('.season-filter-tab');
+    seasonTabs.forEach(tab => {
+      tab.addEventListener('click', function (e) {
+        const season = this.getAttribute('data-season') || 'all';
+        window.filterSeasons(season, this);
       });
-      if (btn) {
-        btn.classList.remove('btn-outline');
-        btn.classList.add('btn-primary');
-      }
-      const cards = document.querySelectorAll('.season-card');
-      cards.forEach(card => {
-        if (season === 'all' || card.getAttribute('data-season') === season) {
-          card.style.display = '';
-          card.style.opacity = '1';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-      if (window.showToast) {
-        window.showToast(`Showing ${season === 'all' ? 'All Seasons' : season.toUpperCase()} Care Protocols`, 'info');
-      }
-    };
+    });
 
     const stageTabs = document.querySelectorAll('.stage-filter-tab');
     if (!stageTabs.length) return;
