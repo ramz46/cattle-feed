@@ -637,13 +637,13 @@
             <strong>Recommended Feeding Rate:</strong> <span style="color: var(--text-muted);">${prod.dosage}</span>
           </p>
 
-          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
-            <div class="quantity-control" style="height: 44px;">
+          <div class="quickview-action-row" style="display: flex; align-items: center; gap: 0.85rem; flex-wrap: nowrap; margin-top: 0.75rem;">
+            <div class="quantity-control" style="height: 44px; flex-shrink: 0;">
               <button class="qty-btn" id="modalQtyMinus" style="width: 36px; height: 100%; font-size: 1rem;">-</button>
               <span class="qty-val" id="modalQtyVal" style="font-size: 1.1rem; padding: 0 1.2rem;">1</span>
               <button class="qty-btn" id="modalQtyPlus" style="width: 36px; height: 100%; font-size: 1rem;">+</button>
             </div>
-            <button class="btn btn-primary" id="modalAddToCartBtn" style="flex-grow: 1;">
+            <button class="btn btn-primary" id="modalAddToCartBtn" style="flex: 1; height: 44px; min-height: 44px; border-radius: var(--radius-full); font-size: 0.95rem; font-weight: 700;">
               <i class="fa-solid fa-cart-shopping"></i> Add to Cart
             </button>
           </div>
