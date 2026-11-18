@@ -147,6 +147,26 @@
     display: none !important;
   }
 
+  /* Prevent horizontal overflow from reveal animations across all viewports */
+  .reveal-left,
+  .reveal-right {
+    transform: translateY(20px) scale(0.99) !important;
+    filter: none !important;
+  }
+  .reveal-left.is-revealed,
+  .reveal-right.is-revealed {
+    transform: translateY(0) scale(1) !important;
+    filter: none !important;
+  }
+
+  .table-responsive,
+  .feeding-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
   .grid-4 {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -181,7 +201,11 @@
     display: none !important;
   }
 
-  /* Hide Search, Cart, and RTL/LTR buttons in top navbar on mobile and inspect mode */
+  /* Hide Search, Cart, and RTL/LTR buttons on mobile and inspect mode */
+  .search-toggle-btn,
+  .cart-toggle-btn,
+  .rtl-toggle-btn,
+  .mobile-drawer-footer .rtl-toggle-btn,
   .nav-actions .search-toggle-btn,
   .nav-actions .cart-toggle-btn,
   .nav-actions .rtl-toggle-btn,
@@ -189,6 +213,21 @@
   header .nav-actions .cart-toggle-btn,
   header .nav-actions .rtl-toggle-btn {
     display: none !important;
+  }
+
+  .mobile-drawer-footer .d-flex {
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .mobile-drawer-footer .theme-toggle-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .container {
+    padding-left: clamp(1.25rem, 3vw, 1.75rem) !important;
+    padding-right: clamp(1.25rem, 3vw, 1.75rem) !important;
   }
   
   .grid-4 {
@@ -263,6 +302,28 @@
   
   .nutrition-visual img {
     min-height: 340px;
+  }
+}
+
+/* Max Width 991px (Tablets Portrait - Single-Column Grid Stacking & Balanced Spacing) */
+@media (max-width: 991px) {
+  .grid-2 {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .contact-map-frame-wrap {
+    height: 340px !important;
+  }
+
+  .calculator-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+
+  .section-padding {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
   }
 }
 
@@ -1205,7 +1266,7 @@
   }
 }
 
-/* Max Width 400px (Compact Mobile Screens - e.g. iPhone SE, Galaxy A) */
+/* Max Width 400px (Ultra-Compact Mobile Tweaks - Harmonious with all mobile viewports) */
 @media (max-width: 400px) {
   .brand-name {
     font-size: 0.95rem !important;
@@ -1217,18 +1278,13 @@
   }
 
   .action-btn {
-    width: 31px !important;
-    height: 31px !important;
+    width: 32px !important;
+    height: 32px !important;
     font-size: 0.78rem !important;
   }
 
   .nav-actions {
-    gap: 0.22rem !important;
-  }
-
-  /* On ultra-compact screens, search is always accessible in the mobile drawer */
-  .nav-actions .search-toggle-btn {
-    display: none !important;
+    gap: 0.25rem !important;
   }
 
   .checkout-modal-dialog {
@@ -1271,40 +1327,5 @@
 
   .calc-metric-val {
     font-size: 1.35rem !important;
-  }
-
-  /* Ultra-Compact Catalog & Product Card Enhancements */
-  .category-filter-list {
-    grid-template-columns: 1fr !important;
-  }
-
-  .catalog-top-bar {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.65rem !important;
-  }
-
-  .catalog-top-bar .d-flex.align-center {
-    width: 100% !important;
-    justify-content: space-between !important;
-  }
-
-  .sort-select {
-    max-width: 100% !important;
-    flex: 1 !important;
-  }
-
-  .product-content {
-    padding: 1rem 0.85rem !important;
-  }
-
-  .product-meta-row {
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-  }
-
-  .product-card .add-to-cart-btn {
-    width: 100% !important;
-    margin-top: 0.25rem !important;
   }
 }

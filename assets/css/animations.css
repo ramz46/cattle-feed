@@ -234,17 +234,10 @@ body.page-transitioning-out {
   will-change: opacity, transform;
 }
 
-.reveal-left {
-  opacity: 0;
-  transform: translateX(-32px) scale(0.99);
-  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-
+.reveal-left,
 .reveal-right {
   opacity: 0;
-  transform: translateX(32px) scale(0.99);
+  transform: translateY(24px) scale(0.99);
   transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
